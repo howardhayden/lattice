@@ -1,0 +1,315 @@
+{
+  "id": "belief-summary",
+  "contract": {
+    "id": "belief-summary-contract",
+    "revision": "1",
+    "atoms": [
+      {
+        "id": "BEL-EVT-001",
+        "kind": "state",
+        "criticality": "domain",
+        "frame": {
+          "subject": "two rooms",
+          "predicate": "repeated",
+          "object": "the same unsupported claim",
+          "polarity": "positive",
+          "modality": "is"
+        },
+        "requiredIn": [
+          "operative"
+        ],
+        "delivery": {
+          "operative": "explicit"
+        },
+        "protectedFields": [],
+        "prohibitedDependencies": [],
+        "match": {
+          "allOf": [
+            "two rooms",
+            "unsupported claim"
+          ]
+        }
+      },
+      {
+        "id": "BEL-REL-001",
+        "kind": "state",
+        "criticality": "contextual",
+        "frame": {
+          "subject": "trust",
+          "predicate": "shifted",
+          "object": "toward familiar voices",
+          "polarity": "positive",
+          "modality": "is"
+        },
+        "requiredIn": [
+          "experiential"
+        ],
+        "delivery": {
+          "experiential": "explicit"
+        },
+        "protectedFields": [],
+        "prohibitedDependencies": [],
+        "match": {
+          "allOf": [
+            "trust",
+            "familiar voices"
+          ]
+        }
+      },
+      {
+        "id": "BEL-CON-001",
+        "kind": "consequence",
+        "criticality": "domain",
+        "frame": {
+          "subject": "repetition",
+          "predicate": "increased",
+          "object": "perceived consensus without adding evidence",
+          "polarity": "positive",
+          "modality": "is"
+        },
+        "requiredIn": [
+          "interpretive"
+        ],
+        "delivery": {
+          "interpretive": "explicit"
+        },
+        "protectedFields": [],
+        "prohibitedDependencies": [
+          "color",
+          "sound",
+          "spatial-inference"
+        ],
+        "match": {
+          "allOf": [
+            "repetition",
+            "perceived consensus",
+            "without adding evidence"
+          ]
+        }
+      }
+    ],
+    "relations": [
+      {
+        "from": "BEL-EVT-001",
+        "type": "causes",
+        "to": "BEL-REL-001"
+      },
+      {
+        "from": "BEL-REL-001",
+        "type": "causes",
+        "to": "BEL-CON-001"
+      }
+    ],
+    "prohibitedClaims": [
+      {
+        "id": "BEL-NO-TRUTH-CERTIFICATION",
+        "literalForm": "The repeated claim became true."
+      }
+    ],
+    "terminology": {
+      "perceived consensus": "The impression that many independent people agree, whether or not the signals are independent."
+    }
+  },
+  "context": {
+    "domain": "belief-dynamics",
+    "surface": "summary",
+    "mode": "consequence",
+    "stakes": "consequential",
+    "safetyClass": "none",
+    "locale": "en-US",
+    "audience": {
+      "knowledgeTags": [
+        "collective-belief"
+      ],
+      "readingLevel": 9
+    },
+    "channel": {
+      "visualAvailable": true,
+      "audioAvailable": true,
+      "spatialInferenceAllowed": true
+    },
+    "limits": {
+      "maxCharacters": 900,
+      "maxSentences": 10,
+      "maxCandidates": 12
+    },
+    "sceneImportance": "major"
+  },
+  "outputs": [
+    {
+      "layer": "operative",
+      "representation": "standard"
+    },
+    {
+      "layer": "experiential",
+      "representation": "standard"
+    },
+    {
+      "layer": "interpretive",
+      "representation": "standard"
+    },
+    {
+      "layer": "interpretive",
+      "representation": "accessibility-equivalent"
+    }
+  ],
+  "profileIds": [
+    "relational-systems"
+  ],
+  "candidates": [
+    {
+      "id": "belief-operative",
+      "layer": "operative",
+      "representation": "standard",
+      "text": "Two rooms repeated the same unsupported claim.",
+      "atomIds": [
+        "BEL-EVT-001"
+      ],
+      "metadata": {
+        "dependencies": [],
+        "claims": [],
+        "stateChanges": [
+          "claim-repeated-across-rooms"
+        ],
+        "affectedParties": [
+          "room-participants",
+          "moderators"
+        ]
+      }
+    },
+    {
+      "id": "belief-experiential",
+      "layer": "experiential",
+      "representation": "standard",
+      "text": "The second telling met less resistance than the first. Trust had begun to gather around familiar voices, and the room treated recognition as if it were corroboration.",
+      "atomIds": [
+        "BEL-REL-001"
+      ],
+      "metadata": {
+        "dependencies": [
+          "implication"
+        ],
+        "claims": [
+          {
+            "id": "belief-trust-shift",
+            "status": "qualified",
+            "atomIds": [
+              "BEL-REL-001"
+            ]
+          }
+        ],
+        "stateChanges": [
+          "trust-redistributed"
+        ],
+        "affectedParties": [
+          "room-participants",
+          "moderators"
+        ],
+        "sensoryAnchors": [
+          "the second telling"
+        ],
+        "narrativeLayers": [
+          "conversation",
+          "relationship",
+          "collective-belief"
+        ],
+        "causalLinks": [
+          {
+            "from": "conversation",
+            "to": "relationship"
+          },
+          {
+            "from": "relationship",
+            "to": "collective-belief"
+          }
+        ]
+      }
+    },
+    {
+      "id": "belief-interpretive",
+      "layer": "interpretive",
+      "representation": "standard",
+      "text": "Repetition increased perceived consensus without adding evidence. Because the second room encountered an already familiar formulation, recognition lowered resistance even though the claim's support did not change.",
+      "atomIds": [
+        "BEL-CON-001"
+      ],
+      "metadata": {
+        "dependencies": [],
+        "claims": [
+          {
+            "id": "belief-consensus-claim",
+            "status": "qualified",
+            "atomIds": [
+              "BEL-CON-001"
+            ]
+          }
+        ],
+        "stateChanges": [
+          "mechanism-made-explicit"
+        ],
+        "affectedParties": [
+          "room-participants",
+          "moderators"
+        ],
+        "narrativeLayers": [
+          "conversation",
+          "belief",
+          "moderation"
+        ],
+        "causalLinks": [
+          {
+            "from": "conversation",
+            "to": "belief"
+          },
+          {
+            "from": "belief",
+            "to": "moderation"
+          }
+        ]
+      }
+    },
+    {
+      "id": "belief-interpretive-accessible",
+      "layer": "interpretive",
+      "representation": "accessibility-equivalent",
+      "text": "Repetition increased perceived consensus without adding evidence. Participants encountered the same wording in two rooms, so familiarity increased while the amount of supporting evidence stayed unchanged.",
+      "atomIds": [
+        "BEL-CON-001"
+      ],
+      "metadata": {
+        "dependencies": [],
+        "claims": [
+          {
+            "id": "belief-consensus-claim-accessible",
+            "status": "qualified",
+            "atomIds": [
+              "BEL-CON-001"
+            ]
+          }
+        ],
+        "stateChanges": [
+          "mechanism-made-explicit"
+        ],
+        "affectedParties": [
+          "room-participants",
+          "moderators"
+        ],
+        "narrativeLayers": [
+          "conversation",
+          "belief",
+          "moderation"
+        ],
+        "causalLinks": [
+          {
+            "from": "conversation",
+            "to": "belief"
+          },
+          {
+            "from": "belief",
+            "to": "moderation"
+          }
+        ]
+      }
+    }
+  ]
+}

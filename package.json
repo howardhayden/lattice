@@ -1,0 +1,43 @@
+{
+  "name": "@howardhayden/lattice-register-engine",
+  "version": "0.1.1",
+  "description": "Deterministic, provenance-aware realization and validation of context-sensitive language.",
+  "type": "module",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE.md",
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./profile": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/relational-systems.js"
+    }
+  },
+  "bin": {
+    "lre": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "types",
+    "schemas",
+    "profiles",
+    "docs",
+    "LICENSE.md",
+    "REGISTER-LICENSE.md",
+    "LICENSES",
+    "license-scope.json",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "check": "npm run build && node scripts/check.mjs && node --test test/*.test.mjs",
+    "example": "npm run build && node examples/run.mjs"
+  }
+}

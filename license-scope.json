@@ -1,0 +1,81 @@
+{
+  "$schema": "./schemas/license-scope.schema.json",
+  "version": "1.0.0",
+  "copyrightHolder": "Hayden Howard",
+  "requiredNotice": "Copyright 2026 Hayden Howard. All rights reserved except as expressly licensed.",
+  "scopes": {
+    "register-exclusive": {
+      "license": "LicenseRef-Lattice-Exclusive-Register-1.0",
+      "terms": "REGISTER-LICENSE.md",
+      "files": [
+        "profiles/relational-systems.profile.json",
+        "dist/profiles/relational-systems.profile.json",
+        "docs/register-specification.md",
+        "examples/belief-summary.request.json",
+        "examples/contact-loss-review.request.json",
+        "examples/export-mismatch-notice.request.json",
+        "examples/supported-movement.request.json",
+        "test/adversarial.test.mjs"
+      ]
+    },
+    "engine-noncommercial": {
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "terms": "LICENSES/PolyForm-Noncommercial-1.0.0.md",
+      "files": [
+        ".gitignore",
+        "CHANGELOG.md",
+        "README.md",
+        "package.json",
+        "tsconfig.json",
+        "docs/architecture.md",
+        "docs/requirements.md",
+        "examples/README.md",
+        "examples/run.mjs",
+        "schemas/derivation-receipt.schema.json",
+        "schemas/license-scope.schema.json",
+        "schemas/realization-request.schema.json",
+        "schemas/register-profile.schema.json",
+        "scripts/build.mjs",
+        "scripts/check.mjs",
+        "src/cli.ts",
+        "src/constants.ts",
+        "src/context.ts",
+        "src/engine.ts",
+        "src/errors.ts",
+        "src/index.ts",
+        "src/predicates.ts",
+        "src/profile.ts",
+        "src/relational-systems.ts",
+        "src/semantic.ts",
+        "src/util.ts",
+        "src/validators.ts",
+        "types/index.d.ts",
+        "dist/cli.js",
+        "dist/constants.js",
+        "dist/context.js",
+        "dist/engine.js",
+        "dist/errors.js",
+        "dist/index.js",
+        "dist/predicates.js",
+        "dist/profile.js",
+        "dist/relational-systems.js",
+        "dist/semantic.js",
+        "dist/util.js",
+        "dist/validators.js"
+      ]
+    },
+    "license-administrative": {
+      "license": "LicenseRef-Lattice-License-Administration-1.0",
+      "terms": "LICENSE.md",
+      "files": [
+        "LICENSE.md",
+        "REGISTER-LICENSE.md",
+        "LICENSES/PolyForm-Noncommercial-1.0.0.md",
+        "license-scope.json",
+        "docs/licensing.md",
+        "docs/license-requirements.md",
+        "docs/license-red-team.md"
+      ]
+    }
+  }
+}

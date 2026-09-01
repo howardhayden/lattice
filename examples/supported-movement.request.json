@@ -1,0 +1,326 @@
+{
+  "id": "supported-movement",
+  "contract": {
+    "id": "supported-movement-contract",
+    "revision": "1",
+    "atoms": [
+      {
+        "id": "MOV-ACT-001",
+        "kind": "action",
+        "criticality": "safety",
+        "frame": {
+          "subject": "you",
+          "predicate": "place",
+          "object": "your left foot flat before transferring weight",
+          "polarity": "positive",
+          "modality": "must"
+        },
+        "requiredIn": [
+          "operative"
+        ],
+        "delivery": {
+          "operative": "explicit"
+        },
+        "protectedFields": [
+          "subject",
+          "predicate",
+          "object",
+          "polarity",
+          "modality"
+        ],
+        "prohibitedDependencies": [
+          "imagery",
+          "color",
+          "sound",
+          "timing-perception",
+          "implication",
+          "spatial-inference"
+        ],
+        "literalForm": "Place your left foot flat before transferring weight."
+      },
+      {
+        "id": "MOV-REC-001",
+        "kind": "recovery",
+        "criticality": "safety",
+        "frame": {
+          "subject": "you",
+          "predicate": "pause",
+          "object": "the movement if dizziness begins",
+          "polarity": "positive",
+          "modality": "must"
+        },
+        "requiredIn": [
+          "operative"
+        ],
+        "delivery": {
+          "operative": "explicit"
+        },
+        "protectedFields": [
+          "subject",
+          "predicate",
+          "object",
+          "polarity",
+          "modality"
+        ],
+        "prohibitedDependencies": [
+          "imagery",
+          "color",
+          "sound",
+          "direction",
+          "timing-perception",
+          "implication",
+          "spatial-inference"
+        ],
+        "literalForm": "Pause the movement if dizziness begins."
+      },
+      {
+        "id": "MOV-SEN-001",
+        "kind": "state",
+        "criticality": "contextual",
+        "frame": {
+          "subject": "your weight",
+          "predicate": "settles",
+          "object": "through the planted heel",
+          "polarity": "positive",
+          "modality": "is"
+        },
+        "requiredIn": [
+          "experiential"
+        ],
+        "delivery": {
+          "experiential": "explicit"
+        },
+        "protectedFields": [],
+        "prohibitedDependencies": [],
+        "match": {
+          "allOf": [
+            "weight settles",
+            "planted heel"
+          ]
+        }
+      },
+      {
+        "id": "MOV-CAUSE-001",
+        "kind": "consequence",
+        "criticality": "domain",
+        "frame": {
+          "subject": "full-foot contact",
+          "predicate": "widens",
+          "object": "the base available for a controlled transfer",
+          "polarity": "positive",
+          "modality": "is"
+        },
+        "requiredIn": [
+          "interpretive"
+        ],
+        "delivery": {
+          "interpretive": "explicit"
+        },
+        "protectedFields": [],
+        "prohibitedDependencies": [],
+        "match": {
+          "allOf": [
+            "full-foot contact",
+            "controlled transfer"
+          ]
+        }
+      }
+    ],
+    "relations": [
+      {
+        "from": "MOV-ACT-001",
+        "type": "before",
+        "to": "MOV-REC-001"
+      },
+      {
+        "from": "MOV-ACT-001",
+        "type": "causes",
+        "to": "MOV-SEN-001"
+      },
+      {
+        "from": "MOV-SEN-001",
+        "type": "causes",
+        "to": "MOV-CAUSE-001"
+      }
+    ],
+    "prohibitedClaims": [
+      {
+        "id": "MOV-NO-GUARANTEE",
+        "literalForm": "This movement cannot cause dizziness."
+      }
+    ],
+    "terminology": {
+      "full-foot contact": "Contact distributed across the heel and forefoot rather than concentrated at one edge."
+    }
+  },
+  "context": {
+    "domain": "guided-movement",
+    "surface": "instruction",
+    "mode": "movement",
+    "stakes": "safety-critical",
+    "safetyClass": "critical",
+    "locale": "en-US",
+    "audience": {
+      "knowledgeTags": [
+        "guided-movement"
+      ],
+      "readingLevel": 7
+    },
+    "focalizer": {
+      "id": "participant",
+      "role": "learner",
+      "expertiseTags": [],
+      "knowledgeTags": [
+        "guided-movement"
+      ]
+    },
+    "channel": {
+      "visualAvailable": true,
+      "audioAvailable": false,
+      "spatialInferenceAllowed": false
+    },
+    "limits": {
+      "maxCharacters": 600,
+      "maxSentences": 8,
+      "maxCandidates": 12
+    },
+    "sceneImportance": "minor"
+  },
+  "outputs": [
+    {
+      "layer": "operative",
+      "representation": "standard"
+    },
+    {
+      "layer": "operative",
+      "representation": "accessibility-equivalent"
+    },
+    {
+      "layer": "experiential",
+      "representation": "standard"
+    },
+    {
+      "layer": "interpretive",
+      "representation": "standard"
+    }
+  ],
+  "profileIds": [
+    "relational-systems"
+  ],
+  "candidates": [
+    {
+      "id": "movement-operative",
+      "layer": "operative",
+      "representation": "standard",
+      "text": "Place your left foot flat before transferring weight. Pause the movement if dizziness begins.",
+      "atomIds": [
+        "MOV-ACT-001",
+        "MOV-REC-001"
+      ],
+      "metadata": {
+        "dependencies": [],
+        "claims": [],
+        "stateChanges": [
+          "foot-contact-established"
+        ],
+        "affectedParties": [
+          "participant"
+        ],
+        "focalizerId": "participant",
+        "actionGraph": {
+          "actor": "participant",
+          "action": "plants the left foot before transferring weight",
+          "result": "the transfer begins from full-foot contact"
+        }
+      }
+    },
+    {
+      "id": "movement-operative-accessible",
+      "layer": "operative",
+      "representation": "accessibility-equivalent",
+      "text": "Place your left foot flat before transferring weight. Pause the movement if dizziness begins.",
+      "atomIds": [
+        "MOV-ACT-001",
+        "MOV-REC-001"
+      ],
+      "metadata": {
+        "dependencies": [],
+        "claims": [],
+        "stateChanges": [
+          "foot-contact-established"
+        ],
+        "affectedParties": [
+          "participant"
+        ],
+        "focalizerId": "participant",
+        "actionGraph": {
+          "actor": "participant",
+          "action": "plants the left foot before transferring weight",
+          "result": "the transfer begins from full-foot contact"
+        }
+      }
+    },
+    {
+      "id": "movement-experiential",
+      "layer": "experiential",
+      "representation": "standard",
+      "text": "Your weight settles through the planted heel, then spreads across the foot instead of gathering at its edge.",
+      "atomIds": [
+        "MOV-SEN-001"
+      ],
+      "metadata": {
+        "dependencies": [],
+        "claims": [],
+        "stateChanges": [
+          "weight-distribution-felt"
+        ],
+        "affectedParties": [
+          "participant"
+        ],
+        "focalizerId": "participant",
+        "sensoryAnchors": [
+          "heel pressure",
+          "foot contact"
+        ],
+        "actionGraph": {
+          "actor": "participant",
+          "action": "notices weight distribution",
+          "result": "the planted heel becomes an embodied reference"
+        }
+      }
+    },
+    {
+      "id": "movement-interpretive",
+      "layer": "interpretive",
+      "representation": "standard",
+      "text": "Full-foot contact gives the body a wider base for a controlled transfer, so the next shift begins from known support rather than a narrow edge.",
+      "atomIds": [
+        "MOV-CAUSE-001"
+      ],
+      "metadata": {
+        "dependencies": [],
+        "claims": [
+          {
+            "id": "movement-base-claim",
+            "status": "qualified",
+            "atomIds": [
+              "MOV-CAUSE-001"
+            ]
+          }
+        ],
+        "stateChanges": [
+          "support-model-explained"
+        ],
+        "affectedParties": [
+          "participant"
+        ],
+        "focalizerId": "participant",
+        "actionGraph": {
+          "actor": "participant",
+          "action": "transfers weight from full-foot contact",
+          "result": "the transfer begins from a wider base"
+        }
+      }
+    }
+  ]
+}

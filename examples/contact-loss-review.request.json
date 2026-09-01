@@ -1,0 +1,350 @@
+{
+  "id": "contact-loss-review",
+  "contract": {
+    "id": "contact-loss-contract",
+    "revision": "1",
+    "atoms": [
+      {
+        "id": "CTL-STATE-001",
+        "kind": "state",
+        "criticality": "domain",
+        "frame": {
+          "subject": "the task group",
+          "predicate": "lost",
+          "object": "continuous contact for eleven minutes",
+          "polarity": "positive",
+          "modality": "is"
+        },
+        "requiredIn": [
+          "operative"
+        ],
+        "delivery": {
+          "operative": "explicit"
+        },
+        "protectedFields": [
+          "subject",
+          "predicate",
+          "object"
+        ],
+        "prohibitedDependencies": [],
+        "match": {
+          "allOf": [
+            "task group",
+            "lost continuous contact",
+            "eleven minutes"
+          ]
+        }
+      },
+      {
+        "id": "CTL-EXP-001",
+        "kind": "state",
+        "criticality": "contextual",
+        "frame": {
+          "subject": "the formation",
+          "predicate": "held",
+          "object": "while contact information stopped changing",
+          "polarity": "positive",
+          "modality": "is"
+        },
+        "requiredIn": [
+          "experiential"
+        ],
+        "delivery": {
+          "experiential": "explicit"
+        },
+        "protectedFields": [],
+        "prohibitedDependencies": [],
+        "match": {
+          "allOf": [
+            "formation held",
+            "contact information"
+          ]
+        }
+      },
+      {
+        "id": "CTL-CAUSE-001",
+        "kind": "consequence",
+        "criticality": "domain",
+        "frame": {
+          "subject": "the contact gap",
+          "predicate": "delayed",
+          "object": "objective confirmation without proving hostile action",
+          "polarity": "positive",
+          "modality": "is"
+        },
+        "requiredIn": [
+          "interpretive"
+        ],
+        "delivery": {
+          "interpretive": "explicit"
+        },
+        "protectedFields": [],
+        "prohibitedDependencies": [
+          "color",
+          "sound",
+          "spatial-inference"
+        ],
+        "match": {
+          "allOf": [
+            "contact gap",
+            "delayed objective confirmation",
+            "did not prove hostile action"
+          ]
+        }
+      }
+    ],
+    "relations": [
+      {
+        "from": "CTL-STATE-001",
+        "type": "causes",
+        "to": "CTL-EXP-001"
+      },
+      {
+        "from": "CTL-STATE-001",
+        "type": "causes",
+        "to": "CTL-CAUSE-001"
+      }
+    ],
+    "prohibitedClaims": [
+      {
+        "id": "CTL-NO-HOSTILE-CERTAINTY",
+        "literalForm": "The contact loss proved hostile action."
+      }
+    ],
+    "terminology": {
+      "continuous contact": "An uninterrupted sequence of usable observations associated with the same tracked contact."
+    }
+  },
+  "context": {
+    "domain": "maritime-decision-support",
+    "surface": "after-action",
+    "mode": "analysis",
+    "stakes": "consequential",
+    "safetyClass": "none",
+    "locale": "en-US",
+    "audience": {
+      "knowledgeTags": [
+        "naval-operations",
+        "uncertainty"
+      ],
+      "readingLevel": 10
+    },
+    "focalizer": {
+      "id": "watch-officer",
+      "role": "analyst",
+      "expertiseTags": [
+        "contact-management"
+      ],
+      "knowledgeTags": [
+        "task-group-state"
+      ]
+    },
+    "channel": {
+      "visualAvailable": true,
+      "audioAvailable": true,
+      "spatialInferenceAllowed": true
+    },
+    "limits": {
+      "maxCharacters": 1000,
+      "maxSentences": 12,
+      "maxCandidates": 12
+    },
+    "sceneImportance": "major"
+  },
+  "outputs": [
+    {
+      "layer": "operative",
+      "representation": "standard"
+    },
+    {
+      "layer": "experiential",
+      "representation": "standard"
+    },
+    {
+      "layer": "experiential",
+      "representation": "accessibility-equivalent"
+    },
+    {
+      "layer": "interpretive",
+      "representation": "standard"
+    }
+  ],
+  "profileIds": [
+    "relational-systems"
+  ],
+  "candidates": [
+    {
+      "id": "contact-loss-operative",
+      "layer": "operative",
+      "representation": "standard",
+      "text": "The task group lost continuous contact for eleven minutes.",
+      "atomIds": [
+        "CTL-STATE-001"
+      ],
+      "metadata": {
+        "dependencies": [],
+        "claims": [
+          {
+            "id": "contact-loss-duration",
+            "status": "qualified",
+            "atomIds": [
+              "CTL-STATE-001"
+            ],
+            "evidenceRefs": [
+              "scenario-state:contact-log"
+            ]
+          }
+        ],
+        "stateChanges": [
+          "contact-continuity-broken"
+        ],
+        "affectedParties": [
+          "task-group",
+          "mission-command"
+        ],
+        "focalizerId": "watch-officer"
+      }
+    },
+    {
+      "id": "contact-loss-experiential",
+      "layer": "experiential",
+      "representation": "standard",
+      "text": "The formation held while the contact information stopped changing. Eleven minutes passed with every ship still doing its work against a picture that had ceased to answer.",
+      "atomIds": [
+        "CTL-EXP-001"
+      ],
+      "metadata": {
+        "dependencies": [
+          "imagery"
+        ],
+        "claims": [
+          {
+            "id": "contact-loss-experience",
+            "status": "qualified",
+            "atomIds": [
+              "CTL-EXP-001"
+            ]
+          }
+        ],
+        "stateChanges": [
+          "uncertainty-became-operational"
+        ],
+        "affectedParties": [
+          "task-group",
+          "mission-command"
+        ],
+        "focalizerId": "watch-officer",
+        "sensoryAnchors": [
+          "unchanging contact picture"
+        ],
+        "narrativeLayers": [
+          "watchstanding",
+          "formation",
+          "mission"
+        ],
+        "causalLinks": [
+          {
+            "from": "watchstanding",
+            "to": "formation"
+          },
+          {
+            "from": "formation",
+            "to": "mission"
+          }
+        ]
+      }
+    },
+    {
+      "id": "contact-loss-experiential-accessible",
+      "layer": "experiential",
+      "representation": "accessibility-equivalent",
+      "text": "The formation held while the available contact information remained unchanged. For eleven minutes, the ships continued their assigned work without receiving a new usable observation.",
+      "atomIds": [
+        "CTL-EXP-001"
+      ],
+      "metadata": {
+        "dependencies": [],
+        "claims": [
+          {
+            "id": "contact-loss-experience-accessible",
+            "status": "qualified",
+            "atomIds": [
+              "CTL-EXP-001"
+            ]
+          }
+        ],
+        "stateChanges": [
+          "uncertainty-became-operational"
+        ],
+        "affectedParties": [
+          "task-group",
+          "mission-command"
+        ],
+        "focalizerId": "watch-officer",
+        "sensoryAnchors": [
+          "unchanged contact information"
+        ],
+        "narrativeLayers": [
+          "watchstanding",
+          "formation",
+          "mission"
+        ],
+        "causalLinks": [
+          {
+            "from": "watchstanding",
+            "to": "formation"
+          },
+          {
+            "from": "formation",
+            "to": "mission"
+          }
+        ]
+      }
+    },
+    {
+      "id": "contact-loss-interpretive",
+      "layer": "interpretive",
+      "representation": "standard",
+      "text": "The contact gap delayed objective confirmation, but it did not prove hostile action. Treating absence as intent would convert an information failure into an escalation decision without additional evidence.",
+      "atomIds": [
+        "CTL-CAUSE-001"
+      ],
+      "metadata": {
+        "dependencies": [],
+        "claims": [
+          {
+            "id": "contact-loss-gap-effect",
+            "status": "qualified",
+            "atomIds": [
+              "CTL-CAUSE-001"
+            ]
+          }
+        ],
+        "stateChanges": [
+          "uncertainty-separated-from-intent"
+        ],
+        "affectedParties": [
+          "task-group",
+          "mission-command",
+          "unidentified-contact"
+        ],
+        "focalizerId": "watch-officer",
+        "narrativeLayers": [
+          "information",
+          "command",
+          "escalation"
+        ],
+        "causalLinks": [
+          {
+            "from": "information",
+            "to": "command"
+          },
+          {
+            "from": "command",
+            "to": "escalation"
+          }
+        ]
+      }
+    }
+  ]
+}

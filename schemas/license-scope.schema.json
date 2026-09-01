@@ -1,0 +1,40 @@
+{
+  "$id": "urn:lattice:schemas:license-scope:v1",
+  "title": "Lattice license scope manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "version", "copyrightHolder", "requiredNotice", "scopes"],
+  "properties": {
+    "$schema": { "const": "./schemas/license-scope.schema.json" },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "copyrightHolder": { "const": "Hayden Howard" },
+    "requiredNotice": { "type": "string", "minLength": 1 },
+    "scopes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["register-exclusive", "engine-noncommercial", "license-administrative"],
+      "properties": {
+        "register-exclusive": { "$ref": "#/$defs/scope" },
+        "engine-noncommercial": { "$ref": "#/$defs/scope" },
+        "license-administrative": { "$ref": "#/$defs/scope" }
+      }
+    }
+  },
+  "$defs": {
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["license", "terms", "files"],
+      "properties": {
+        "license": { "type": "string", "minLength": 1 },
+        "terms": { "type": "string", "minLength": 1 },
+        "files": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

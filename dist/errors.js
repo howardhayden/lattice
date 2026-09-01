@@ -1,0 +1,32 @@
+export class LatticeError extends Error {
+  constructor(code, message, details = {}) {
+    super(message);
+    this.name = "LatticeError";
+    this.code = code;
+    this.details = details;
+  }
+}
+
+export const FailureCode = Object.freeze({
+  CONTRACT_INCOMPLETE: "E_CONTRACT_INCOMPLETE",
+  CONTRADICTORY_ATOMS: "E_CONTRADICTORY_ATOMS",
+  UNCOVERED_ATOM: "E_UNCOVERED_ATOM",
+  CRITICAL_ATOM_NONLITERAL: "E_CRITICAL_ATOM_NONLITERAL",
+  SEMANTIC_DRIFT: "E_NEGATION_OR_MODALITY_CHANGED",
+  QUANTITY_DRIFT: "E_QUANTITY_OR_UNIT_CHANGED",
+  LAYER_CONTRADICTION: "E_LAYER_CONTRADICTION",
+  ACCESSIBILITY_GAP: "E_ACCESSIBILITY_GAP",
+  INVENTED_SEMANTICS: "E_INVENTED_SEMANTICS",
+  PROFILE_CONFLICT: "E_PROFILE_CONFLICT",
+  PROFILE_CYCLE: "E_PROFILE_CYCLE",
+  UNSUPPORTED_CONTEXT: "E_UNSUPPORTED_CONTEXT",
+  UNKNOWN_VALIDATOR: "E_UNKNOWN_VALIDATOR",
+  CANDIDATE_EXHAUSTED: "E_CANDIDATE_EXHAUSTED",
+  EXECUTION_BOUND: "E_EXECUTION_BOUND",
+  RECEIPT_TAMPERED: "E_RECEIPT_TAMPERED",
+  INVALID_INPUT: "E_INVALID_INPUT"
+});
+
+export function invariant(condition, code, message, details = {}) {
+  if (!condition) throw new LatticeError(code, message, details);
+}
