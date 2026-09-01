@@ -1,0 +1,323 @@
+{
+  "$id": "urn:lattice:schemas:derivation-receipt:v1",
+  "title": "Lattice Derivation Receipt",
+  "description": "Deterministic evidence of derivation and conformance. This receipt does not establish source truth, authorship, or historical authenticity.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "engine",
+    "requestId",
+    "runId",
+    "inputDigest",
+    "dependencies",
+    "outputs",
+    "candidates",
+    "decisions",
+    "assurance",
+    "trustScope",
+    "derivationDigest"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "lre.receipt.v1"
+    },
+    "engine": {
+      "$ref": "#/$defs/engine"
+    },
+    "requestId": {
+      "$ref": "#/$defs/identifier"
+    },
+    "runId": {
+      "type": "string",
+      "pattern": "^r[a-f0-9]{23}$"
+    },
+    "inputDigest": {
+      "$ref": "#/$defs/digest"
+    },
+    "dependencies": {
+      "$ref": "#/$defs/dependencies"
+    },
+    "outputs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "$ref": "#/$defs/output"
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "maxItems": 300,
+      "items": {
+        "$ref": "#/$defs/candidateDecision"
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "maxItems": 14336,
+      "items": {
+        "$ref": "#/$defs/ruleDecision"
+      }
+    },
+    "assurance": {
+      "$ref": "#/$defs/assurance"
+    },
+    "trustScope": {
+      "const": "reproducibility-and-conformance-only"
+    },
+    "derivationDigest": {
+      "$ref": "#/$defs/digest"
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z][A-Za-z0-9._:@-]*$"
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[0-9A-Za-z][0-9A-Za-z._+-]*$"
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "outputKey": {
+      "type": "string",
+      "enum": [
+        "operative:standard",
+        "operative:accessibility-equivalent",
+        "experiential:standard",
+        "experiential:accessibility-equivalent",
+        "interpretive:standard",
+        "interpretive:accessibility-equivalent"
+      ]
+    },
+    "engine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "const": "Lattice — Layered Register Engine"
+        },
+        "version": {
+          "$ref": "#/$defs/version"
+        }
+      }
+    },
+    "profileDependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "version",
+        "digest"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "version": {
+          "$ref": "#/$defs/version"
+        },
+        "digest": {
+          "$ref": "#/$defs/digest"
+        }
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "profileDigests"
+      ],
+      "properties": {
+        "profileDigests": {
+          "type": "array",
+          "maxItems": 16,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/profileDependency"
+          }
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "candidateId",
+        "digest",
+        "conformance"
+      ],
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/outputKey"
+        },
+        "candidateId": {
+          "$ref": "#/$defs/identifier"
+        },
+        "digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "conformance": {
+          "enum": [
+            "full",
+            "degraded",
+            "literal"
+          ]
+        }
+      }
+    },
+    "candidateDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outputKey",
+        "candidateId",
+        "digest",
+        "selected",
+        "source",
+        "rank",
+        "rejectionCodes"
+      ],
+      "properties": {
+        "outputKey": {
+          "$ref": "#/$defs/outputKey"
+        },
+        "candidateId": {
+          "$ref": "#/$defs/identifier"
+        },
+        "digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "selected": {
+          "type": "boolean"
+        },
+        "source": {
+          "enum": [
+            "provided",
+            "literal"
+          ]
+        },
+        "rank": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {
+            "type": "number"
+          }
+        },
+        "rejectionCodes": {
+          "type": "array",
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/identifier"
+          }
+        }
+      }
+    },
+    "ruleDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outputKey",
+        "candidateId",
+        "profileId",
+        "ruleId",
+        "disposition",
+        "reason",
+        "findingStatus",
+        "findingCode"
+      ],
+      "properties": {
+        "outputKey": {
+          "$ref": "#/$defs/outputKey"
+        },
+        "candidateId": {
+          "$ref": "#/$defs/identifier"
+        },
+        "profileId": {
+          "$ref": "#/$defs/identifier"
+        },
+        "ruleId": {
+          "$ref": "#/$defs/identifier"
+        },
+        "disposition": {
+          "enum": [
+            "applied",
+            "suppressed",
+            "inapplicable",
+            "failed"
+          ]
+        },
+        "reason": {
+          "$ref": "#/$defs/identifier"
+        },
+        "findingStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "pass",
+            "warn",
+            "fail",
+            "unknown",
+            "not-applicable",
+            null
+          ]
+        },
+        "findingCode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "anyOf": [
+            {
+              "$ref": "#/$defs/identifier"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "assurance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "deterministic",
+        "networkIndependent",
+        "semanticScope",
+        "externallyAnchored"
+      ],
+      "properties": {
+        "deterministic": {
+          "const": true
+        },
+        "networkIndependent": {
+          "const": true
+        },
+        "semanticScope": {
+          "const": "declared-contract-and-registered-claims"
+        },
+        "externallyAnchored": {
+          "const": false
+        }
+      }
+    }
+  }
+}

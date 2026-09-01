@@ -1,0 +1,355 @@
+{
+  "$id": "urn:lattice:schemas:register-profile:v1",
+  "title": "Lattice Register Profile",
+  "description": "A bounded declarative profile for contextual linguistic rules.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "version",
+    "title",
+    "rules"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "version": {
+      "$ref": "#/$defs/version"
+    },
+    "title": {
+      "$ref": "#/$defs/nonEmptyText"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 100000
+    },
+    "source": {
+      "$ref": "#/$defs/identifier"
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 256,
+      "items": {
+        "$ref": "#/$defs/rule"
+      }
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z][A-Za-z0-9._:@-]*$"
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[0-9A-Za-z][0-9A-Za-z._+-]*$"
+    },
+    "profileIdentifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^(?!LRE-)[A-Za-z][A-Za-z0-9._:@-]*$"
+    },
+    "nonEmptyText": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100000
+    },
+    "predicateField": {
+      "enum": [
+        "layer",
+        "representation",
+        "surface",
+        "mode",
+        "stakes",
+        "safetyClass",
+        "domain",
+        "audience.readingLevel",
+        "focalizer.id",
+        "focalizer.role",
+        "channel.visualAvailable",
+        "channel.audioAvailable",
+        "channel.spatialInferenceAllowed"
+      ]
+    },
+    "scalarExpression": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "field",
+        "value"
+      ],
+      "properties": {
+        "field": {
+          "$ref": "#/$defs/predicateField"
+        },
+        "value": {}
+      }
+    },
+    "arrayExpression": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "field",
+        "value"
+      ],
+      "properties": {
+        "field": {
+          "$ref": "#/$defs/predicateField"
+        },
+        "value": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true
+        }
+      }
+    },
+    "predicate": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "all"
+          ],
+          "properties": {
+            "all": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 64,
+              "items": {
+                "$ref": "#/$defs/predicate"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "any"
+          ],
+          "properties": {
+            "any": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 64,
+              "items": {
+                "$ref": "#/$defs/predicate"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "not"
+          ],
+          "properties": {
+            "not": {
+              "$ref": "#/$defs/predicate"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "eq"
+          ],
+          "properties": {
+            "eq": {
+              "$ref": "#/$defs/scalarExpression"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "neq"
+          ],
+          "properties": {
+            "neq": {
+              "$ref": "#/$defs/scalarExpression"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "in"
+          ],
+          "properties": {
+            "in": {
+              "$ref": "#/$defs/arrayExpression"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "notIn"
+          ],
+          "properties": {
+            "notIn": {
+              "$ref": "#/$defs/arrayExpression"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "exists"
+          ],
+          "properties": {
+            "exists": {
+              "$ref": "#/$defs/scalarExpression"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "gte"
+          ],
+          "properties": {
+            "gte": {
+              "$ref": "#/$defs/scalarExpression"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "lte"
+          ],
+          "properties": {
+            "lte": {
+              "$ref": "#/$defs/scalarExpression"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "hasTag"
+          ],
+          "properties": {
+            "hasTag": {
+              "$ref": "#/$defs/scalarExpression"
+            }
+          }
+        }
+      ]
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "revision",
+        "norm",
+        "priority",
+        "enforcement",
+        "validatorId"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/profileIdentifier"
+        },
+        "revision": {
+          "$ref": "#/$defs/version"
+        },
+        "description": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "norm": {
+          "enum": [
+            "must",
+            "mustNot",
+            "prefer",
+            "avoid"
+          ]
+        },
+        "priority": {
+          "enum": [
+            "clarity",
+            "domain",
+            "register",
+            "ornament"
+          ]
+        },
+        "enforcement": {
+          "enum": [
+            "hard",
+            "soft",
+            "advisory"
+          ]
+        },
+        "validatorId": {
+          "enum": [
+            "subtext-redundancy",
+            "exposition-state-change",
+            "dialogue-objective",
+            "sentence-variance",
+            "punctuation-restraint",
+            "technical-claims",
+            "externality-presence",
+            "scene-ending",
+            "focal-specificity",
+            "embodied-anchor",
+            "layered-depth",
+            "action-clarity",
+            "manual-review"
+          ]
+        },
+        "appliesWhen": {
+          "$ref": "#/$defs/predicate"
+        },
+        "dependsOn": {
+          "type": "array",
+          "maxItems": 256,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/profileIdentifier"
+          }
+        },
+        "conflictsWith": {
+          "type": "array",
+          "maxItems": 256,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/profileIdentifier"
+          }
+        },
+        "tags": {
+          "type": "array",
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/identifier"
+          }
+        },
+        "params": {
+          "type": "object",
+          "maxProperties": 64,
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}

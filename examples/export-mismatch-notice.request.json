@@ -1,0 +1,374 @@
+{
+  "id": "export-mismatch-notice",
+  "contract": {
+    "id": "export-mismatch-contract",
+    "revision": "1",
+    "atoms": [
+      {
+        "id": "EMN-STATE-001",
+        "kind": "state",
+        "criticality": "operative",
+        "frame": {
+          "subject": "verification",
+          "predicate": "found",
+          "object": "a digest mismatch in the saved export",
+          "polarity": "positive",
+          "modality": "is"
+        },
+        "requiredIn": [
+          "operative"
+        ],
+        "delivery": {
+          "operative": "explicit"
+        },
+        "protectedFields": [
+          "subject",
+          "predicate",
+          "object"
+        ],
+        "prohibitedDependencies": [
+          "imagery",
+          "color",
+          "sound",
+          "implication",
+          "spatial-inference"
+        ],
+        "literalForm": "Verification found a digest mismatch in the saved export."
+      },
+      {
+        "id": "EMN-ACT-001",
+        "kind": "action",
+        "criticality": "operative",
+        "frame": {
+          "subject": "you",
+          "predicate": "keep",
+          "object": "the export isolated until its provenance is reviewed",
+          "polarity": "positive",
+          "modality": "must"
+        },
+        "requiredIn": [
+          "operative"
+        ],
+        "delivery": {
+          "operative": "explicit"
+        },
+        "protectedFields": [
+          "subject",
+          "predicate",
+          "object",
+          "modality"
+        ],
+        "prohibitedDependencies": [
+          "imagery",
+          "color",
+          "sound",
+          "implication",
+          "spatial-inference"
+        ],
+        "literalForm": "Keep the export isolated until its provenance is reviewed."
+      },
+      {
+        "id": "EMN-EXP-001",
+        "kind": "state",
+        "criticality": "contextual",
+        "frame": {
+          "subject": "the export",
+          "predicate": "sits",
+          "object": "outside the trusted set while the surrounding records remain available",
+          "polarity": "positive",
+          "modality": "is"
+        },
+        "requiredIn": [
+          "experiential"
+        ],
+        "delivery": {
+          "experiential": "explicit"
+        },
+        "protectedFields": [],
+        "prohibitedDependencies": [],
+        "match": {
+          "allOf": [
+            "export",
+            "outside the trusted set",
+            "surrounding records remain available"
+          ]
+        }
+      },
+      {
+        "id": "EMN-INT-001",
+        "kind": "consequence",
+        "criticality": "domain",
+        "frame": {
+          "subject": "the mismatch",
+          "predicate": "shows",
+          "object": "that the saved bytes differ from the recorded digest without proving when or why they changed",
+          "polarity": "positive",
+          "modality": "is"
+        },
+        "requiredIn": [
+          "interpretive"
+        ],
+        "delivery": {
+          "interpretive": "explicit"
+        },
+        "protectedFields": [],
+        "prohibitedDependencies": [
+          "color",
+          "sound",
+          "spatial-inference"
+        ],
+        "match": {
+          "allOf": [
+            "saved bytes differ",
+            "recorded digest",
+            "does not prove when or why"
+          ]
+        }
+      }
+    ],
+    "relations": [
+      {
+        "from": "EMN-STATE-001",
+        "type": "before",
+        "to": "EMN-ACT-001"
+      },
+      {
+        "from": "EMN-STATE-001",
+        "type": "causes",
+        "to": "EMN-EXP-001"
+      },
+      {
+        "from": "EMN-STATE-001",
+        "type": "causes",
+        "to": "EMN-INT-001"
+      }
+    ],
+    "prohibitedClaims": [
+      {
+        "id": "EMN-NO-AUTHENTICITY-CLAIM",
+        "literalForm": "The mismatch proves who changed the export."
+      }
+    ],
+    "terminology": {
+      "digest": "A fixed-length value computed from bytes and used here to detect whether those bytes changed."
+    }
+  },
+  "context": {
+    "domain": "records-continuity",
+    "surface": "public-notice",
+    "mode": "institutional",
+    "stakes": "consequential",
+    "safetyClass": "advisory",
+    "locale": "en-US",
+    "audience": {
+      "knowledgeTags": [
+        "records-stewardship"
+      ],
+      "readingLevel": 8
+    },
+    "focalizer": {
+      "id": "records-steward",
+      "role": "operator",
+      "expertiseTags": [
+        "provenance",
+        "digital-preservation"
+      ],
+      "knowledgeTags": [
+        "export-history"
+      ]
+    },
+    "channel": {
+      "visualAvailable": false,
+      "audioAvailable": false,
+      "spatialInferenceAllowed": false
+    },
+    "limits": {
+      "maxCharacters": 1000,
+      "maxSentences": 12,
+      "maxCandidates": 12
+    },
+    "sceneImportance": "major"
+  },
+  "outputs": [
+    {
+      "layer": "operative",
+      "representation": "standard"
+    },
+    {
+      "layer": "operative",
+      "representation": "accessibility-equivalent"
+    },
+    {
+      "layer": "experiential",
+      "representation": "standard"
+    },
+    {
+      "layer": "interpretive",
+      "representation": "standard"
+    }
+  ],
+  "profileIds": [
+    "relational-systems"
+  ],
+  "candidates": [
+    {
+      "id": "export-mismatch-operative",
+      "layer": "operative",
+      "representation": "standard",
+      "text": "Verification found a digest mismatch in the saved export. Keep the export isolated until its provenance is reviewed.",
+      "atomIds": [
+        "EMN-STATE-001",
+        "EMN-ACT-001"
+      ],
+      "metadata": {
+        "dependencies": [],
+        "claims": [
+          {
+            "id": "export-mismatch-detected",
+            "status": "qualified",
+            "atomIds": [
+              "EMN-STATE-001"
+            ],
+            "evidenceRefs": [
+              "verification-result:saved-export"
+            ]
+          }
+        ],
+        "stateChanges": [
+          "export-isolated"
+        ],
+        "affectedParties": [
+          "records-steward",
+          "records-users"
+        ],
+        "focalizerId": "records-steward",
+        "actionGraph": {
+          "actor": "records-steward",
+          "action": "isolates the mismatched export",
+          "result": "the export is withheld pending provenance review"
+        }
+      }
+    },
+    {
+      "id": "export-mismatch-operative-accessible",
+      "layer": "operative",
+      "representation": "accessibility-equivalent",
+      "text": "Verification found a digest mismatch in the saved export. Keep the export isolated until its provenance is reviewed.",
+      "atomIds": [
+        "EMN-STATE-001",
+        "EMN-ACT-001"
+      ],
+      "metadata": {
+        "dependencies": [],
+        "claims": [
+          {
+            "id": "export-mismatch-detected-accessible",
+            "status": "qualified",
+            "atomIds": [
+              "EMN-STATE-001"
+            ],
+            "evidenceRefs": [
+              "verification-result:saved-export"
+            ]
+          }
+        ],
+        "stateChanges": [
+          "export-isolated"
+        ],
+        "affectedParties": [
+          "records-steward",
+          "records-users"
+        ],
+        "focalizerId": "records-steward",
+        "actionGraph": {
+          "actor": "records-steward",
+          "action": "isolates the mismatched export",
+          "result": "the export is withheld pending provenance review"
+        }
+      }
+    },
+    {
+      "id": "export-mismatch-experiential",
+      "layer": "experiential",
+      "representation": "standard",
+      "text": "The export now sits outside the trusted set, held apart while the surrounding records remain available and one file waits for review.",
+      "atomIds": [
+        "EMN-EXP-001"
+      ],
+      "metadata": {
+        "dependencies": [],
+        "claims": [],
+        "stateChanges": [
+          "trust-boundary-narrowed"
+        ],
+        "affectedParties": [
+          "records-steward",
+          "records-users"
+        ],
+        "focalizerId": "records-steward",
+        "sensoryAnchors": [
+          "one isolated export"
+        ],
+        "narrativeLayers": [
+          "file",
+          "collection",
+          "access"
+        ],
+        "causalLinks": [
+          {
+            "from": "file",
+            "to": "collection"
+          },
+          {
+            "from": "collection",
+            "to": "access"
+          }
+        ]
+      }
+    },
+    {
+      "id": "export-mismatch-interpretive",
+      "layer": "interpretive",
+      "representation": "standard",
+      "text": "The saved bytes differ from the recorded digest. That establishes a mismatch, but it does not prove when or why the bytes changed; provenance review must supply evidence the digest alone cannot provide.",
+      "atomIds": [
+        "EMN-INT-001"
+      ],
+      "metadata": {
+        "dependencies": [],
+        "claims": [
+          {
+            "id": "export-mismatch-scope",
+            "status": "qualified",
+            "atomIds": [
+              "EMN-INT-001"
+            ]
+          }
+        ],
+        "stateChanges": [
+          "verification-scope-delimited"
+        ],
+        "affectedParties": [
+          "records-steward",
+          "records-users"
+        ],
+        "focalizerId": "records-steward",
+        "narrativeLayers": [
+          "bytes",
+          "evidence",
+          "institutional-trust"
+        ],
+        "causalLinks": [
+          {
+            "from": "bytes",
+            "to": "evidence"
+          },
+          {
+            "from": "evidence",
+            "to": "institutional-trust"
+          }
+        ]
+      }
+    }
+  ]
+}
