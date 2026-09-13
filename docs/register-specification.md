@@ -4,7 +4,7 @@ Required Notice: Copyright 2026 Hayden Howard. All rights reserved.
 
 This document is a Register Material governed by the [Lattice Exclusive Register License 1.0](../REGISTER-LICENSE.md). Visual inspection for evaluation does not authorize functional use.
 
-The machine-readable, atomized authority is [`profiles/relational-systems.profile.json`](../profiles/relational-systems.profile.json). The requirements below define its integration contract but do not replace its 69 atomic rules.
+The machine-readable, atomized authority is [`profiles/relational-systems.profile.json`](../profiles/relational-systems.profile.json). The requirements below define its integration contract but do not replace its 87 atomic rules.
 
 | ID | Requirement | Verification |
 | --- | --- | --- |
@@ -20,6 +20,12 @@ The machine-readable, atomized authority is [`profiles/relational-systems.profil
 | LRE-RSR-010 | The profile MUST apply cadence and punctuation preferences only as lower-tier register checks. | Verify a cadence win cannot defeat a hard-gate loss. |
 | LRE-RSR-011 | The profile MUST suppress figurative, subtextual, or ornamental dependencies in operative, safety-critical, and accessibility-protected contexts. | Context matrix tests. |
 | LRE-RSR-012 | The profile MUST NOT force every feature into every output. | Inapplicability tests across modes and surfaces. |
+
+## Target-relative prose control
+
+Profile `v1.1.0` adds `RSR-CTL-001` through `RSR-CTL-018` without modifying or superseding the original 69 rules. Their [control atomization](prose-control.md) defines the mathematical review model, adoption decisions, applicability, dependencies, acceptance probes, and limits of measurement. [Verification evidence](prose-control-verification.md) distinguishes automated structural checks from editorial judgments and unexecuted runtime checks.
+
+The controls use the existing `manual-review` validator with advisory enforcement. Registration is not automated literary understanding: applicable unassessed controls remain unknown. No new request fields, automatic quality score, or override of a hard gate is introduced.
 
 ## Protected forms
 

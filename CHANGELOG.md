@@ -2,6 +2,15 @@
 
 All material changes to Lattice — Layered Register Engine are recorded here.
 
+## Unreleased — 2026-09-13
+
+### Register atomization
+
+- Added 18 target-relative prose-control review atoms in bundled profile `v1.1.0`; all 69 prior rules remain unchanged.
+- Added a bounded mathematical review model, stronger-only adoption map, per-atom acceptance probes, and explicit evidence limits.
+- Preserved hard-gate precedence, contextual suppression, existing licensing, and unknown manual-review findings; no automatic literary score or new request fields were introduced.
+- Added 34 focused structural and reference-arithmetic checks, with the initial two failures and their correction documented in the control verification record.
+
 ## 0.1.1 — 2026-09-01
 
 ### Added

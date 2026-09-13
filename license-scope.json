@@ -1,6 +1,6 @@
 {
   "$schema": "./schemas/license-scope.schema.json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "copyrightHolder": "Hayden Howard",
   "requiredNotice": "Copyright 2026 Hayden Howard. All rights reserved except as expressly licensed.",
   "scopes": {
@@ -15,7 +15,10 @@
         "examples/contact-loss-review.request.json",
         "examples/export-mismatch-notice.request.json",
         "examples/supported-movement.request.json",
-        "test/adversarial.test.mjs"
+        "test/adversarial.test.mjs",
+        "docs/prose-control.md",
+        "docs/prose-control-verification.md",
+        "test/prose-control.test.mjs"
       ]
     },
     "engine-noncommercial": {
