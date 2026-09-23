@@ -2,7 +2,7 @@
 
 Lattice is a local-first, deterministic TypeScript engine for producing and validating context-sensitive copy from typed meaning contracts. It separates **what a text must mean** from **how that meaning may be expressed**, then records how each output was derived.
 
-This owner package is **proprietary source-available software, not open source**. Engine files are available only under PolyForm Noncommercial 1.0.0. The bundled register is separately reserved for Hayden Howard’s exclusive functional use; third parties receive inspection permission but no right to execute, apply, adapt, redistribute, train on, or commercialize it. See [Licensing](#licensing).
+This owner package is **proprietary source-available software, not open source**. Current Engine Materials are governed by the Hayden Howard Proprietary Product and Source License 1.0: source inspection and authorized Official Product use do not supply general implementation-reuse rights. Valid PolyForm permissions already attached to earlier distributed copies remain governed by their own terms; this policy does not decide their application to a different copy or later distribution. The bundled register remains separately reserved for Hayden Howard’s exclusive functional use; third parties receive its existing limited inspection permission but no right to execute, apply, adapt, redistribute, train on, or commercialize it. See [Licensing](#licensing).
 
 Lattice is not an arbitrary prose-rewriting system. It does not infer an authoritative semantic contract from unstructured text, call a language model, or treat stylistic resemblance as proof that meaning survived. Strong guarantees apply only when a caller supplies structured semantic atoms, explicit context, compiled register rules, and traceable candidate realizations.
 
@@ -77,7 +77,7 @@ The bundled profile evaluates and ranks realizations; it does not synthesize nov
 
 ## Owner-only JavaScript quickstart
 
-The following example loads and executes the exclusive register. It is operational documentation for the Licensor. Third parties may inspect it for evaluation but are not licensed to run or adapt it.
+The following example loads and executes the exclusive register. It is operational documentation for the Owner and expressly authorized collaborators. Third parties may inspect it within the applicable terms but are not licensed to run or adapt the owner package or register.
 
 ```js
 import { createEngine } from "@howardhayden/lattice-register-engine";
@@ -171,17 +171,17 @@ The controlling scope is file-specific:
 
 | Material | Terms | Third-party permission |
 | --- | --- | --- |
-| Reusable engine | PolyForm Noncommercial 1.0.0 | Defined noncommercial purposes only. |
+| Engine Materials | Hayden Howard Proprietary Product and Source License 1.0 | Inspection within the terms; Official Product use only within an actual offering or entitlement; no general implementation reuse. |
 | Relational Systems Register | Lattice Exclusive Register License 1.0 | Evaluation inspection only; no functional use. |
-| Licensing records | `LICENSE.md` | Retention and copying as necessary to preserve or comply with terms. |
+| Licensing and historical records | `LICENSE.md` and source-specific terms | Retention and copying as necessary to preserve, communicate, or comply with terms; retained PolyForm text is not a new default engine grant. |
 
-The complete package remains marked `private` and must not be published to a public package registry. A future public engine-only release would have to omit the register, its activation and export, and every register-specific fixture or test.
+The complete package remains marked `private` and must not be published to a public package registry without separate express authorization. A separately authorized executable offering follows its actual entitlement terms and does not grant source reuse. Removing the register or extracting the engine does not automatically create a public or permissive release.
 
-Read the controlling [license notice](LICENSE.md), [exclusive register terms](REGISTER-LICENSE.md), [scope manifest](license-scope.json), [licensing guide](docs/licensing.md), and [adversarial licensing review](docs/license-red-team.md) before distributing or using any part of the package.
+Read the controlling [license notice](LICENSE.md), [proprietary engine terms](LICENSES/Hayden-Proprietary-1.0.md), [exclusive register terms](REGISTER-LICENSE.md), [commercial baseline](COMMERCIAL_BASELINE.md), [scope manifest](license-scope.json), [licensing guide](docs/licensing.md), and [adversarial licensing review](docs/license-red-team.md) before distributing or using any part of the package.
 
 ## Owner-only local development
 
-The complete development and verification commands load Register Materials and execute register-specific fixtures. They are not included in the third-party inspection permission.
+The complete development and verification commands load Register Materials and execute register-specific fixtures. They are for the Owner and expressly authorized collaborators and are not included in either source-inspection permission.
 
 Requirements:
 

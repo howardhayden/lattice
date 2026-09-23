@@ -118,7 +118,7 @@ safety
 
 ## 8. Restricted register boundary
 
-The bundled register’s integration requirements are maintained in the [restricted register specification](register-specification.md). That document, the atomized profile, its compiled form, register-specific fixtures, and the designated adversarial corpus are Register Materials governed by the Exclusive Register License. They do not inherit the engine’s PolyForm grant.
+The bundled register’s integration requirements are maintained in the [restricted register specification](register-specification.md). That document, the atomized profile, its compiled form, register-specific fixtures, and the designated adversarial corpus are Register Materials governed by the Exclusive Register License. They do not inherit the current proprietary engine terms, and the historical PolyForm engine grant never applied to them.
 
 ## 9. Evidence and replay
 

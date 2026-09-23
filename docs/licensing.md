@@ -1,70 +1,80 @@
 # Lattice licensing guide
 
-This guide explains the package’s licensing boundary in practical terms. It does not replace [`LICENSE.md`](../LICENSE.md), the [PolyForm terms](../LICENSES/PolyForm-Noncommercial-1.0.0.md), the [Exclusive Register License](../REGISTER-LICENSE.md), or the controlling path manifest in [`license-scope.json`](../license-scope.json).
+Policy revision: 2026-09-23. This guide explains `LICENSE.md`, the proprietary
+engine terms, the unchanged Exclusive Register License, and `license-scope.json`.
+It does not amend valid earlier or third-party licenses and is not legal advice.
 
-## Classification
+## Classification and permissions
 
-Lattice is **source-available, not open source**. Two scopes apply:
+Lattice is proprietary, source-available, not open source.
 
-| Scope | Governing terms | Practical result |
+| Material | Controlling terms | New permission supplied by this distribution |
 | --- | --- | --- |
-| Engine Materials | PolyForm Noncommercial 1.0.0 | The engine may be used, studied, changed, and redistributed only for purposes permitted by PolyForm. Commercial use is not granted. |
-| Register Materials | Lattice Exclusive Register License 1.0 | Third parties may retain and visually inspect evaluation copies, but may not functionally use, execute, apply, adapt, extract, redistribute, train on, or commercialize the exact register. |
-| License-administrative files | `LICENSE.md` | Notices and terms may be retained and copied as needed for compliance. |
+| Engine Materials | Hayden Howard Proprietary Product and Source License 1.0 | Inspection within the terms; Official Product use only within an actual free offering or purchased entitlement. No general implementation reuse. |
+| Register Materials | Lattice Exclusive Register License 1.0 | The existing limited evaluation-inspection scope; no third-party functional use. |
+| Administrative files | LICENSE.md and source-specific terms | Copies necessary to preserve notices, communicate terms, or comply. |
 
-## Decision matrix
+There is no personal, educational, nonprofit, governmental, or noncommercial
+exception to the engine's new implementation-reuse boundary. Removing the
+exclusive register or writing an independent profile does not by itself grant
+permission to run, modify, incorporate, or redistribute Engine Materials.
+A commercial customer can use an actually offered Official Product within its
+entitlement without acquiring the implementation. A receipt is not a source
+license. A repository without a price is not a free product offering.
 
-| Proposed activity | Engine with an independently created profile | Relational Systems Register |
-| --- | --- | --- |
-| Read for portfolio evaluation | Permitted | Permitted as visual inspection |
-| Personal experiment with no anticipated commercial application | Permitted under PolyForm | Not permitted |
-| Use by a qualifying noncommercial organization | Permitted under PolyForm | Not permitted |
-| Modify privately for a permitted noncommercial purpose | Permitted under PolyForm | Not permitted |
-| Redistribute for a permitted noncommercial purpose with required notices | Permitted under PolyForm | Not permitted |
-| Internal use by a commercial organization | Not permitted | Not permitted |
-| Paid work, consulting, hosted service, or monetized product | Not permitted | Not permitted |
-| Apply the rules manually rather than through software | Not applicable | Not permitted |
-| Extract a subset, paraphrase the rules, or build a derived register | Not applicable | Not permitted where it copies or adapts protected expression |
-| AI training, fine-tuning, retrieval, prompting, evaluation, or benchmarking | Only for a permitted engine purpose and without Register Materials | Not permitted |
-| Independent creation without copying protected expression | Permitted, subject to other applicable rights | Not restricted by this package’s copyright license |
-| Fair use or another non-waivable statutory exception | Unchanged | Unchanged |
+## Official offerings and the register
 
-## Why the scopes are separate
+Free access exists only within the Owner's deliberately offered product scope.
+Priced functionality requires the actual purchase, subscription, or explicit
+exception. Trials are limited to their stated scope; old paid entitlements
+retain their agreed term and scope. A price change does not create retroactive
+charges or revoke valid earlier grants.
 
-The engine is reusable infrastructure. Its noncommercial license allows inspection, personal research, and qualifying institutional use while reserving commercialization.
+The Owner's expressly authorized work is not a third-party public grant.
+An authorized Owner-operated product may use the Owner's register; its users
+do not thereby receive the register, its rules, or a right to run the owner
+package. Ordinary product outputs and the underlying register remain distinct.
+This correction grants no blanket third-party manual, software, or AI use of
+the Relational Systems Register.
 
-The register is the distinctive authored system: its atom selection, wording, arrangement, interactions, examples, and evaluative logic. Making the engine inspectable does not require granting others the right to use that register. The exclusive scope therefore overrides the engine scope wherever the manifest classifies a file as `register-exclusive`.
+## Source exposure and distribution
 
-## Distribution policy
+Publishing source exposes bytes even when a license restricts reuse;
+access control and private distribution are stronger controls than license text
+alone. Public GitHub viewing and forking rights remain subject to the platform's
+terms. No repository visibility is changed by this policy.
 
-The complete owner package contains both scopes and remains marked `private` in `package.json`. It must not be published to a public package registry as-is.
+The complete owner package remains `private` and blocked from public registry
+publication. A separate executable offering requires express Owner authorization,
+its own entitlement terms, a closed inventory, preserved notices, and applicable
+release review. Engine-only extraction is not an automatic public reuse license.
+Do not modify runtime export or activation behavior merely to change the license.
 
-If a public engine release is ever desired, create a separate release that:
+## Earlier grants and third-party material
 
-1. omits every `register-exclusive` file;
-2. removes the built-in-register export and default activation;
-3. substitutes neutral fixtures and tests created independently of the register;
-4. retains the PolyForm terms and Required Notice;
-5. passes the license-scope audit; and
-6. is reviewed as a distinct release rather than treating owner-package approval as publication approval.
+The retained PolyForm text records terms that may still govern earlier copies;
+it is not the default license for newly offered Engine Materials. Valid
+permissions already attached to earlier distributed copies remain governed by
+their own terms. This policy does not determine whether an earlier permission
+applies to a different copy or later distribution. Repricing, renaming, and
+rewriting a notice cannot erase rights in copies to which they validly attached.
+Preserve history and notices. Third-party materials retain their own terms.
+Statutory exceptions, unprotected ideas and methods, and independent creation
+remain outside any claim of exclusivity supplied by these documents.
 
-Publishing source exposes the bytes even when the license forbids their use. If practical exclusivity matters, access control and private distribution are stronger controls than license text alone. The license supplies legal terms; it is not digital-rights management.
+## Maintenance and review
 
-## Commercial permissions
+Every file remains assigned to one manifest scope. Register source, compiled
+copies, fixtures, and specifications remain exclusive. Scope schema, package
+checks, README, current requirements, and review records must use the new engine
+scope consistently. Retain superseded review outcomes as historical evidence;
+do not present them as validation of this revision.
 
-This distribution offers no commercial license and no third-party register-use license. Any exception must be granted separately in a writing signed by Hayden Howard. Silence, contribution, repository access, technical interoperability, or attribution is not permission.
+Outside contributions require documented ownership and licensing provenance.
+Any additional third-party permission requires a separate signed Owner grant;
+publication, silence, attribution, and product payment do not supply it.
 
-## Contribution policy
-
-Do not accept outside contributions without a contributor agreement that preserves the Licensor’s ability to enforce and separately license the affected scope. A pull request alone should not be treated as sufficient provenance for register changes.
-
-## Package and repository labels
-
-Use these descriptions consistently:
-
-- **Correct:** proprietary source-available software; noncommercial engine license; exclusive register.
-- **Incorrect:** open source, open-source register, free software, community register, or publicly licensed writing voice.
-
-## Legal review
-
-The scope is engineered to express the intended policy clearly, but enforceability and available remedies vary by jurisdiction and facts. Before public release, commercial negotiation, or enforcement, have qualified intellectual-property counsel review the package, ownership chain, contributor history, and distribution method.
+This policy does not set prices, implement billing or a paywall, activate a held
+product, or promise support. Qualified legal review is still required before
+commercial launch, enforcement, or claims of enforceability. Automated policy
+checks cannot authenticate ownership or establish legal validity.

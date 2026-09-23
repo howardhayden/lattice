@@ -2,6 +2,15 @@
 
 All material changes to Lattice — Layered Register Engine are recorded here.
 
+## Unreleased — 2026-09-23
+
+### Licensing policy
+
+- Established a prospective commercial baseline on parent `029ca14570b3ebe5703f504ab4b4baed90883f84`.
+- Replaced the current engine’s PolyForm default with the Hayden Howard Proprietary Product and Source License 1.0; preserved valid historical PolyForm grants and the third-party license text.
+- Preserved the separate Lattice Exclusive Register License without broadening third-party functional-use rights.
+- Aligned the scope manifest, schema, package metadata, documentation, adversarial review, and executable license checks without changing runtime behavior, pricing, release status, or repository visibility.
+
 ## Unreleased — 2026-09-13
 
 ### Register atomization

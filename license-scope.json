@@ -1,6 +1,6 @@
 {
   "$schema": "./schemas/license-scope.schema.json",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "copyrightHolder": "Hayden Howard",
   "requiredNotice": "Copyright 2026 Hayden Howard. All rights reserved except as expressly licensed.",
   "scopes": {
@@ -21,9 +21,9 @@
         "test/prose-control.test.mjs"
       ]
     },
-    "engine-noncommercial": {
-      "license": "PolyForm-Noncommercial-1.0.0",
-      "terms": "LICENSES/PolyForm-Noncommercial-1.0.0.md",
+    "engine-proprietary": {
+      "license": "LicenseRef-Hayden-Proprietary-1.0",
+      "terms": "LICENSES/Hayden-Proprietary-1.0.md",
       "files": [
         ".gitignore",
         "CHANGELOG.md",
@@ -77,7 +77,9 @@
         "license-scope.json",
         "docs/licensing.md",
         "docs/license-requirements.md",
-        "docs/license-red-team.md"
+        "docs/license-red-team.md",
+        "LICENSES/Hayden-Proprietary-1.0.md",
+        "COMMERCIAL_BASELINE.md"
       ]
     }
   }

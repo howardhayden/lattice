@@ -1,6 +1,6 @@
 # Runnable examples
 
-The request fixtures in this directory are Register Materials governed by the Lattice Exclusive Register License. They may be visually inspected for evaluation but may not be executed, applied, adapted, redistributed, or used to derive another register. `run.mjs` and this explanatory file remain Engine Materials under the package’s PolyForm Noncommercial scope.
+The request fixtures in this directory are Register Materials governed by the Lattice Exclusive Register License. They may be visually inspected for evaluation but may not be executed, applied, adapted, redistributed, or used to derive another register. `run.mjs` and this explanatory file are current Engine Materials under the package’s proprietary engine scope. Valid PolyForm permissions for covered historical copies remain governed by their historical terms.
 
 Each request contains a semantic contract, context, requested layer and representation pairs, and inspectable candidates. Together, the fixtures exercise:
 

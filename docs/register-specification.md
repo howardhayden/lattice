@@ -33,4 +33,4 @@ The exclusive scope includes the source profile, its compiled copies, these regi
 
 ## Engine relationship
 
-The register may be loaded by the engine, but it is not part of the engine’s noncommercial license grant. A third party wishing to exercise a permitted PolyForm right in the engine must remove the exclusive register, remove its default activation and export, and provide an independently created profile and fixtures.
+The register may be loaded by the engine, but it is not part of the engine’s proprietary license scope. Authorized use of an Owner-operated Official Product does not disclose or sublicense the register. Removing the exclusive register, its default activation and export, or its fixtures does not by itself grant permission to run, modify, incorporate, or redistribute current Engine Materials. Valid PolyForm permissions for covered historical engine copies remain governed by their historical terms and never override the register’s separate exclusive scope.

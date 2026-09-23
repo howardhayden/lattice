@@ -1,5 +1,5 @@
 {
-  "$id": "urn:lattice:schemas:license-scope:v1",
+  "$id": "urn:lattice:schemas:license-scope:v2",
   "title": "Lattice license scope manifest",
   "type": "object",
   "additionalProperties": false,
@@ -12,10 +12,10 @@
     "scopes": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["register-exclusive", "engine-noncommercial", "license-administrative"],
+      "required": ["register-exclusive", "engine-proprietary", "license-administrative"],
       "properties": {
         "register-exclusive": { "$ref": "#/$defs/scope" },
-        "engine-noncommercial": { "$ref": "#/$defs/scope" },
+        "engine-proprietary": { "$ref": "#/$defs/scope" },
         "license-administrative": { "$ref": "#/$defs/scope" }
       }
     }

@@ -123,15 +123,37 @@ test("specification states manual-review and mathematical authority limits", () 
   assert.ok(register.includes("(prose-control-verification.md)"));
 });
 
-test("new register materials preserve the existing license boundaries", () => {
+test("current proprietary scope preserves exact pre-baseline manifest evidence", () => {
   const manifest = JSON.parse(read("license-scope.json"));
   const added = ["docs/prose-control.md", "docs/prose-control-verification.md", "test/prose-control.test.mjs"];
   const all = Object.values(manifest.scopes).flatMap((scope) => scope.files);
   assert.equal(all.length, new Set(all).size);
   for (const path of added) assert.ok(manifest.scopes["register-exclusive"].files.includes(path));
-  manifest.scopes["register-exclusive"].files = manifest.scopes["register-exclusive"].files.filter((path) => !added.includes(path));
-  manifest.version = "1.0.0";
-  assert.equal(gitBlob(`${JSON.stringify(manifest, null, 2)}\n`), "1d79a88b5bc99d21dd933fd0c05548f180ce2e00");
+  assert.equal(manifest.scopes["engine-proprietary"].license, "LicenseRef-Hayden-Proprietary-1.0");
+  assert.ok(manifest.scopes["license-administrative"].files.includes("COMMERCIAL_BASELINE.md"));
+  assert.ok(manifest.scopes["license-administrative"].files.includes("LICENSES/PolyForm-Noncommercial-1.0.0.md"));
+
+  const historical = structuredClone(manifest);
+  historical.version = "1.0.0";
+  historical.scopes = {
+    "register-exclusive": {
+      ...historical.scopes["register-exclusive"],
+      files: historical.scopes["register-exclusive"].files.filter((path) => !added.includes(path))
+    },
+    "engine-noncommercial": {
+      ...historical.scopes["engine-proprietary"],
+      license: "PolyForm-Noncommercial-1.0.0",
+      terms: "LICENSES/PolyForm-Noncommercial-1.0.0.md"
+    },
+    "license-administrative": {
+      ...historical.scopes["license-administrative"],
+      files: historical.scopes["license-administrative"].files.filter((path) => ![
+        "LICENSES/Hayden-Proprietary-1.0.md",
+        "COMMERCIAL_BASELINE.md"
+      ].includes(path))
+    }
+  };
+  assert.equal(gitBlob(`${JSON.stringify(historical, null, 2)}\n`), "1d79a88b5bc99d21dd933fd0c05548f180ce2e00");
 });
 
 // Executable reference examples for the document's arithmetic only.
