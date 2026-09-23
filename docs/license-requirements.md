@@ -5,7 +5,7 @@ This register is normative for packaging and distribution. It supplements the pr
 | ID | Requirement | Verification |
 | --- | --- | --- |
 | LRE-LIC-001 | Every shipped file MUST be assigned to exactly one controlling license scope. | Compare the release inventory with `license-scope.json`; reject omissions and duplicates. |
-| LRE-LIC-002 | Current Engine Materials MUST use the Hayden Howard Proprietary Product and Source License 1.0. | Inspect package metadata, scope manifest, and bundled current terms. |
+| LRE-LIC-002 | Current Engine Materials MUST use the Hayden Howard Proprietary Product and Source License 1.1. | Inspect package metadata, scope manifest, and bundled current terms. |
 | LRE-LIC-003 | Register Materials MUST retain the Lattice Exclusive Register License and MUST NOT inherit permission from the engine scope. | Verify `register-exclusive` precedence in `LICENSE.md` and the scope manifest. |
 | LRE-LIC-004 | Third parties MUST receive no general functional-use grant for Register Materials. | Inspect the Exclusive Register License and proposed-use matrix. |
 | LRE-LIC-005 | Register restrictions MUST cover software execution and manual application. | Test the terms against automated and human-authored use cases. |

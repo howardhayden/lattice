@@ -44,7 +44,7 @@ Those statements describe the earlier release work and are not rewritten as vali
 
 The prospective policy gate additionally requires:
 
-1. current Engine Materials use `LicenseRef-Hayden-Proprietary-1.0` rather than a fresh PolyForm default;
+1. current Engine Materials use `LicenseRef-Hayden-Proprietary-1.1` rather than a fresh PolyForm default;
 2. the unchanged custom register scope and all eleven current Register Materials remain closed and exclusive;
 3. the retained PolyForm text is classified as historical/administrative evidence rather than current engine terms;
 4. the commercial baseline records the exact predecessor and first source-available code commit without inventing an OSI-permissive predecessor; and

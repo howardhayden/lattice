@@ -9,7 +9,7 @@ The engine and the exclusive register remain separate scopes.
 ## 1. Engine Materials
 
 Files classified as `engine-proprietary` in `license-scope.json` are governed
-by the [Hayden Howard Proprietary Product and Source License 1.0](LICENSES/Hayden-Proprietary-1.0.md).
+by the [Hayden Howard Proprietary Product and Source License 1.1](LICENSES/Hayden-Proprietary-1.1.md).
 There is no new general noncommercial, educational, institutional, modification,
 redistribution, or source-integration grant. Official-product access follows
 its actual free offering or purchased entitlement; payment does not buy source
@@ -37,10 +37,11 @@ the retained PolyForm text is not a new default grant for Engine Materials.
 ## 4. Precedence and historical boundary
 
 Applicable law, statutory exceptions, and platform rights remain unaffected.
-Valid permissions already attached to earlier distributed copies remain
-governed by their own terms. These terms do not determine whether an earlier
-permission applies to a different copy or later distribution, and do not revoke
-or modify an earlier PolyForm, MIT, Creative Commons, or other valid grant.
+Permissions validly attached to earlier distributed copies remain governed by
+their own terms and do not automatically attach to later copies or snapshots.
+These terms do not determine whether an earlier permission applies to a
+different copy or later distribution, and do not revoke or modify an earlier
+PolyForm, MIT, Creative Commons, or other valid grant.
 Third-party components retain their own terms. A new price or repository
 visibility change does not extinguish rights in copies to which they attached.
 

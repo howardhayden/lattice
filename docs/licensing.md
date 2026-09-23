@@ -10,7 +10,7 @@ Lattice is proprietary, source-available, not open source.
 
 | Material | Controlling terms | New permission supplied by this distribution |
 | --- | --- | --- |
-| Engine Materials | Hayden Howard Proprietary Product and Source License 1.0 | Inspection within the terms; Official Product use only within an actual free offering or purchased entitlement. No general implementation reuse. |
+| Engine Materials | Hayden Howard Proprietary Product and Source License 1.1 | Inspection within the terms; Official Product use only within an actual free offering or purchased entitlement. No general implementation reuse. |
 | Register Materials | Lattice Exclusive Register License 1.0 | The existing limited evaluation-inspection scope; no third-party functional use. |
 | Administrative files | LICENSE.md and source-specific terms | Copies necessary to preserve notices, communicate terms, or comply. |
 
@@ -50,14 +50,15 @@ its own entitlement terms, a closed inventory, preserved notices, and applicable
 release review. Engine-only extraction is not an automatic public reuse license.
 Do not modify runtime export or activation behavior merely to change the license.
 
-## Earlier grants and third-party material
+## Earlier-copy permissions and third-party material
 
 The retained PolyForm text records terms that may still govern earlier copies;
-it is not the default license for newly offered Engine Materials. Valid
-permissions already attached to earlier distributed copies remain governed by
-their own terms. This policy does not determine whether an earlier permission
-applies to a different copy or later distribution. Repricing, renaming, and
-rewriting a notice cannot erase rights in copies to which they validly attached.
+it is not the default license for newly offered Engine Materials. Permissions
+validly attached to earlier distributed copies remain governed by their own
+terms and do not automatically attach to later copies or snapshots. This policy
+does not determine whether an earlier permission applies to a different copy or
+later distribution. Repricing, renaming, and rewriting a notice cannot erase
+rights in copies to which they validly attached.
 Preserve history and notices. Third-party materials retain their own terms.
 Statutory exceptions, unprotected ideas and methods, and independent creation
 remain outside any claim of exclusivity supplied by these documents.

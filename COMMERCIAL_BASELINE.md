@@ -58,3 +58,18 @@ schema, package metadata, README and licensing documentation, adversarial review
 and executable scope checks. Record the introducing commit SHA in release or
 approval evidence after commit creation; a content-addressed commit cannot embed
 its own final SHA in the file from which that SHA is calculated.
+
+## Successor policy record — 2026-09-23 UTC
+
+The baseline facts above remain unchanged: the introducing baseline used
+`LicenseRef-Hayden-Proprietary-1.0`. A later policy-only successor standardizes
+current Engine Materials on `LicenseRef-Hayden-Proprietary-1.1`, with controlling
+terms at `LICENSES/Hayden-Proprietary-1.1.md`. The exact 1.0 text is retained at
+`LICENSES/HISTORICAL/Hayden-Proprietary-1.0.md` solely as historical evidence.
+
+Permissions validly attached to earlier distributed copies remain governed by
+their own terms and do not automatically attach to later copies or snapshots.
+This successor does not alter the baseline parent, the first source-available
+code commit, the separate register scope, third-party rights, platform-supplied
+rights, statutory exceptions, or any valid permission attached to an earlier
+copy.

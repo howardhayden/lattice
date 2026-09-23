@@ -10,6 +10,7 @@ All material changes to Lattice — Layered Register Engine are recorded here.
 - Replaced the current engine’s PolyForm default with the Hayden Howard Proprietary Product and Source License 1.0; preserved valid historical PolyForm grants and the third-party license text.
 - Preserved the separate Lattice Exclusive Register License without broadening third-party functional-use rights.
 - Aligned the scope manifest, schema, package metadata, documentation, adversarial review, and executable license checks without changing runtime behavior, pricing, release status, or repository visibility.
+- Standardized the active engine terms as Hayden Howard Proprietary Product and Source License 1.1, using the canonical earlier-copy wording; retained the superseded 1.0 text only as historical evidence.
 
 ## Unreleased — 2026-09-13
 

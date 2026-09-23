@@ -129,8 +129,10 @@ test("current proprietary scope preserves exact pre-baseline manifest evidence",
   const all = Object.values(manifest.scopes).flatMap((scope) => scope.files);
   assert.equal(all.length, new Set(all).size);
   for (const path of added) assert.ok(manifest.scopes["register-exclusive"].files.includes(path));
-  assert.equal(manifest.scopes["engine-proprietary"].license, "LicenseRef-Hayden-Proprietary-1.0");
+  assert.equal(manifest.scopes["engine-proprietary"].license, "LicenseRef-Hayden-Proprietary-1.1");
   assert.ok(manifest.scopes["license-administrative"].files.includes("COMMERCIAL_BASELINE.md"));
+  assert.ok(manifest.scopes["license-administrative"].files.includes("LICENSES/Hayden-Proprietary-1.1.md"));
+  assert.ok(manifest.scopes["license-administrative"].files.includes("LICENSES/HISTORICAL/Hayden-Proprietary-1.0.md"));
   assert.ok(manifest.scopes["license-administrative"].files.includes("LICENSES/PolyForm-Noncommercial-1.0.0.md"));
 
   const historical = structuredClone(manifest);
@@ -148,7 +150,8 @@ test("current proprietary scope preserves exact pre-baseline manifest evidence",
     "license-administrative": {
       ...historical.scopes["license-administrative"],
       files: historical.scopes["license-administrative"].files.filter((path) => ![
-        "LICENSES/Hayden-Proprietary-1.0.md",
+        "LICENSES/Hayden-Proprietary-1.1.md",
+        "LICENSES/HISTORICAL/Hayden-Proprietary-1.0.md",
         "COMMERCIAL_BASELINE.md"
       ].includes(path))
     }
