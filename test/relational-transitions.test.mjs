@@ -163,3 +163,12 @@ test("unchanged classifications and exact full term texts remain preserved", () 
   };
   for (const [path, expected] of Object.entries(exactTerms)) assert.equal(blob(read(path)), expected);
 });
+
+
+test("reserved controlling notice is included without changing publication authority", () => {
+  const payload = JSON.parse(read("package.json"));
+  assert.equal(payload.private, true);
+  assert.equal(payload.license, "SEE LICENSE IN LICENSE.md");
+  assert.ok(payload.files.includes("RIGHTS-RESERVED.md"));
+  assert.ok(reserved.files.includes("package.json"));
+});

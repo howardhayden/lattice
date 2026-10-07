@@ -74,6 +74,10 @@ if (packagePayload.private !== true) {
   throw new Error("The owner package must remain private and blocked from registry publication");
 }
 
+if (!Array.isArray(packagePayload.files) || !packagePayload.files.includes("RIGHTS-RESERVED.md")) {
+  throw new Error("Reserved controlling notice must be included in package distribution");
+}
+
 const scopeManifest = JSON.parse(await readFile(join(root, "license-scope.json"), "utf8"));
 const expectedScopes = ["register-exclusive", "engine-proprietary", "license-administrative", "owner-reserved"];
 if (Object.keys(scopeManifest.scopes).sort().join("|") !== expectedScopes.sort().join("|")) {
