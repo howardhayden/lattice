@@ -38,15 +38,29 @@ Runtime: Node v24.19.0. Command: `npm run check` (build, package/inventory check
 
 The initial failure was `E_CANDIDATE_EXHAUSTED` in experiential and interpretive mode-matrix tests. The correction changed synthetic fixture semantics rather than weakening a gate. Operative transition rules remain inapplicable. Applicable experiential/interpretive transition findings remain unknown, including accessibility-equivalent output. A prohibited permission claim still fails the hard contract.
 
-Eight actual negative mutations were rejected through shipped checks: scope overlap, missing register protection, a foreign reserved-register path, source/build scope mismatch, grant wording drift, automatic-review substitution, contextual applicability narrowing, and a missing transition atom. Every modified byte was restored and restoration was checked. An initial transient QA harness used a no-op replacement and an overbroad identifier substring; their correction added a changed-input assertion and token-boundary matching before the complete eight-probe run.
+Nine actual negative mutations were rejected through shipped checks: scope overlap, missing register protection, a foreign reserved-register path, source/build scope mismatch, grant wording drift, automatic-review substitution, contextual applicability narrowing, a missing transition atom, and omission of the controlling notice from package distribution. Every modified byte was restored and restoration was checked. An initial transient QA harness used a no-op replacement and an overbroad identifier substring; their correction added a changed-input assertion and token-boundary matching before the complete probe run.
 
-All 19 materially changed/new paths are owner-reserved. Diff whitespace checks and the excluded-reference scan passed. Exact term hashes, the prior manifest identity, inherited profile identity, source/build parity, and the protected runtime/type/request-schema paths were checked.
+All 20 materially changed/new paths are owner-reserved. Diff whitespace checks and the excluded-reference scan passed. Exact term hashes, the prior manifest identity, inherited profile identity, source/build parity, and the protected runtime/type/request-schema paths were checked.
 
 Independent agent review covered semantic integration and governance/rights boundaries. It found no blocking semantic issue. Scope-language corrections in README, licensing guidance, and requirements were incorporated; the dated prior-policy licensing record remains unchanged and is linked as historical evidence. These were agent reviews, not human, audience, or legal reviews.
 
 ## Limits
 
 Mechanical tests establish the registered shape, additive preservation, actual build/runtime behavior, and no-grant inventory. They do not establish correct free-text interpretation, successful editorial scenarios, reader effects, legal enforceability, or overall literary quality. Applicable unassessed manual-review findings remain unknown. Registering an acceptance question does not execute it.
+
+## Packaging closure
+
+After initial integration, a package dry run exposed a missing dependency: the
+new controlling notice was absent from the package file list. The follow-up
+adds RIGHTS-RESERVED.md to that list, reserves the changed package metadata,
+and adds a package guard plus a focused regression. The corrected dry run
+includes the controlling notice. The package remains private; no archive is
+published and no release is authorized by this check. This five-file follow-up
+is bound to initial merge `a76d816b29e3b00347b05a12018bcea333b31f31`.
+
+Final `npm run check`: 123 tests, 123 passed, 0 failed. The ninth negative
+mutation removes the controlling notice from the package list and is rejected.
+Independent governance review covers the added packaging dependency.
 
 ## Repository integration and continuation
 
@@ -70,8 +84,9 @@ authenticity. This record does not hash itself.
 | --- | --- |
 | `profiles/relational-systems.profile.json` | `3ca189b236224d6b06b6ad2994adacdae98a13a2b46be50e2d7e216799cf680a` |
 | `docs/relational-transitions.md` | `dc2318f2580ff2ddb830f1bc111637b9d1d1fa893163b4ecb98a4a73162490d3` |
-| `test/relational-transitions.test.mjs` | `fc5eacd08924076310adfe7b3973c4135a69dd83187cc69e619795dbc0a5e6b9` |
-| `license-scope.json` | `4213c5e390225b0716b910cf07a916349a895d5babecd956f05cb8def872f6c6` |
+| `test/relational-transitions.test.mjs` | `1d648f08e5e80de4ba6415e796500b8f43b1cc33dfd8fcee138173d41db63baa` |
+| `license-scope.json` | `6c8a7feb5ad373a185bf401a228c30ff330051125be88660daad1f37fcbb64ce` |
 | `RIGHTS-RESERVED.md` | `815aee394a0c058b74f0430fb8588932fa4e3cb808f78b60611dee91f462d4a3` |
-| `scripts/check.mjs` | `cdb92b7f66440430b743ebc21d282bc831363d2885ccf73ae76f62d4359c9b1d` |
+| `scripts/check.mjs` | `ac0d8f8fc5aa95007b30bdf0adbc2cf2323147b68a2d9240aabc90af8baf26c9` |
 | `schemas/license-scope.schema.json` | `c49201bf821ba0919ec607abac62fad2799195e287e2d959cc816810f26ac756` |
+| `package.json` | `b43762a9239e9ff2e99ddba211c525dc729d4ab867085f24f9cb01650bc3e836` |

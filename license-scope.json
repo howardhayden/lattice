@@ -21,7 +21,6 @@
       "terms": "LICENSES/Hayden-Proprietary-1.1.md",
       "files": [
         ".gitignore",
-        "package.json",
         "tsconfig.json",
         "docs/architecture.md",
         "examples/README.md",
@@ -86,6 +85,7 @@
         "docs/relational-transitions.md",
         "docs/requirements.md",
         "license-scope.json",
+        "package.json",
         "profiles/relational-systems.profile.json",
         "schemas/license-scope.schema.json",
         "scripts/check.mjs",
