@@ -4,15 +4,27 @@ Policy revision: 2026-09-23. This guide explains `LICENSE.md`, the proprietary
 engine terms, the unchanged Exclusive Register License, and `license-scope.json`.
 It does not amend valid earlier or third-party licenses and is not legal advice.
 
+## Prospective reservation for changed material
+
+From the introducing 2026-10-07 commit, materially changed/new Owner-original
+paths classified as `owner-reserved` are governed by [RIGHTS-RESERVED.md](../RIGHTS-RESERVED.md).
+That notice offers no new contractual grant. The `registerFiles` subset retains
+separate Register Material identity and cannot inherit permission from engine
+terms. Exact path classification controls these revisions; unchanged paths
+retain their existing scope. Applicable law, platform rights, third-party
+terms, and valid earlier-copy permissions remain unaffected. The retained exact
+license texts are not authority to extend their grants to reserved revisions.
+
 ## Classification and permissions
 
 Lattice is proprietary, source-available, not open source.
 
 | Material | Controlling terms | New permission supplied by this distribution |
 | --- | --- | --- |
-| Engine Materials | Hayden Howard Proprietary Product and Source License 1.1 | Inspection within the terms; Official Product use only within an actual free offering or purchased entitlement. No general implementation reuse. |
-| Register Materials | Lattice Exclusive Register License 1.0 | The existing limited evaluation-inspection scope; no third-party functional use. |
-| Administrative files | LICENSE.md and source-specific terms | Copies necessary to preserve notices, communicate terms, or comply. |
+| Changed/new Owner-original paths | Prospective reservation in RIGHTS-RESERVED.md | No new contractual grant. |
+| Unchanged `engine-proprietary` paths | Hayden Howard Proprietary Product and Source License 1.1 | Inspection within the terms; Official Product use only within an actual free offering or purchased entitlement. No general implementation reuse. |
+| Unchanged `register-exclusive` paths | Lattice Exclusive Register License 1.0 | The existing limited evaluation-inspection scope; no third-party functional use. |
+| Unchanged `license-administrative` paths | LICENSE.md and source-specific terms | Copies necessary to preserve notices, communicate terms, or comply. |
 
 There is no personal, educational, nonprofit, governmental, or noncommercial
 exception to the engine's new implementation-reuse boundary. Removing the
@@ -66,7 +78,8 @@ remain outside any claim of exclusivity supplied by these documents.
 ## Maintenance and review
 
 Every file remains assigned to one manifest scope. Register source, compiled
-copies, fixtures, and specifications remain exclusive. Scope schema, package
+copies, fixtures, and specifications retain their exact exclusive or reserved
+classification; no engine grant supplies register rights. Scope schema, package
 checks, README, current requirements, and review records must use the new engine
 scope consistently. Retain superseded review outcomes as historical evidence;
 do not present them as validation of this revision.
@@ -79,3 +92,8 @@ This policy does not set prices, implement billing or a paywall, activate a held
 product, or promise support. Qualified legal review is still required before
 commercial launch, enforcement, or claims of enforceability. Automated policy
 checks cannot authenticate ownership or establish legal validity.
+
+The dated 2026-09-23 [prior-policy review](license-red-team.md) remains historical
+evidence for its bound revision. [Current reservation verification](relational-transitions-verification.md)
+records the changed scope and its executed checks; the dated review is not
+verification of the prospective reserved classification.

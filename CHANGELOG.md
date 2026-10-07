@@ -2,6 +2,16 @@
 
 All material changes to Lattice — Layered Register Engine are recorded here.
 
+## Unreleased — 2026-10-07
+
+### Genre-neutral relational review
+
+- Appended seven advisory `RSR-DYN-001`–`007` rules in profile `v1.2.0`; all 87 inherited rules remain unchanged.
+- Tracked 26 transferable mechanisms, seven positive/negative/boundary probe triplets, and six combination probes without source-specific attribution, genre triggers, or required emotional outcomes.
+- Preserved unknown manual-review findings, operative/accessibility requirements, protected priorities, and the existing engine/request/validator paths.
+- Reserved rights prospectively for materially changed/new Owner-original paths without extending earlier permissions; preserved exact license texts, prior-copy rights, private package metadata, and repository visibility.
+- Added structural/runtime and reservation-scope regression checks; current verification distinguishes these checks from semantic or audience success.
+
 ## Unreleased — 2026-09-23
 
 ### Licensing policy

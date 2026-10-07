@@ -2,11 +2,11 @@
 
 Required Notice: Copyright 2026 Hayden Howard. All rights reserved.
 
-Register Material governed by the [Exclusive Register License](../REGISTER-LICENSE.md).
+This revision is a reserved Register Material under [RIGHTS-RESERVED.md](../RIGHTS-RESERVED.md).
 
 ## Authority, scope, and adoption
 
-The normative atoms are `RSR-CTL-001`–`RSR-CTL-018` in the [bundled profile](../profiles/relational-systems.profile.json), version `v1.1.0`. This document supplies their review semantics, not a competing executable rule set. The [product requirements](requirements.md), protected priorities, and original register rules remain in force. No existing atom is superseded.
+The normative atoms are `RSR-CTL-001`–`RSR-CTL-018` in the [bundled profile](../profiles/relational-systems.profile.json), introduced in version `v1.1.0` and retained unchanged in current version `v1.2.0`. This document supplies their review semantics, not a competing executable rule set. The [product requirements](requirements.md), protected priorities, and original register rules remain in force. No existing atom is superseded.
 
 Source of this change: owner-authorized target-relative control requirements, adopted on 2026-09-13. Baseline: commit `d6cc85b275e3f14163a5a547f626832fd21b27b0`, profile blob `5480c377dbcf546df99f1ba819c48083dbf35937`. Ownership: register maintainer for requirements; reviewing editor for evidence; host integrator for any future measurement implementation. This provenance deliberately records the authorized technical requirements rather than examples used to discuss them.
 

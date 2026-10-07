@@ -1,6 +1,6 @@
 {
   "$schema": "./schemas/license-scope.schema.json",
-  "version": "2.1.0",
+  "version": "2.0.0",
   "copyrightHolder": "Hayden Howard",
   "requiredNotice": "Copyright 2026 Hayden Howard. All rights reserved except as expressly licensed.",
   "scopes": {
@@ -8,12 +8,17 @@
       "license": "LicenseRef-Lattice-Exclusive-Register-1.0",
       "terms": "REGISTER-LICENSE.md",
       "files": [
+        "profiles/relational-systems.profile.json",
+        "dist/profiles/relational-systems.profile.json",
+        "docs/register-specification.md",
         "examples/belief-summary.request.json",
         "examples/contact-loss-review.request.json",
         "examples/export-mismatch-notice.request.json",
         "examples/supported-movement.request.json",
         "test/adversarial.test.mjs",
-        "docs/prose-control-verification.md"
+        "docs/prose-control.md",
+        "docs/prose-control-verification.md",
+        "test/prose-control.test.mjs"
       ]
     },
     "engine-proprietary": {
@@ -21,15 +26,20 @@
       "terms": "LICENSES/Hayden-Proprietary-1.1.md",
       "files": [
         ".gitignore",
+        "CHANGELOG.md",
+        "README.md",
         "package.json",
         "tsconfig.json",
         "docs/architecture.md",
+        "docs/requirements.md",
         "examples/README.md",
         "examples/run.mjs",
         "schemas/derivation-receipt.schema.json",
+        "schemas/license-scope.schema.json",
         "schemas/realization-request.schema.json",
         "schemas/register-profile.schema.json",
         "scripts/build.mjs",
+        "scripts/check.mjs",
         "src/cli.ts",
         "src/constants.ts",
         "src/context.ts",
@@ -61,47 +71,16 @@
       "license": "LicenseRef-Lattice-License-Administration-1.0",
       "terms": "LICENSE.md",
       "files": [
+        "LICENSE.md",
         "REGISTER-LICENSE.md",
         "LICENSES/PolyForm-Noncommercial-1.0.0.md",
+        "license-scope.json",
+        "docs/licensing.md",
+        "docs/license-requirements.md",
         "docs/license-red-team.md",
         "LICENSES/Hayden-Proprietary-1.1.md",
         "LICENSES/HISTORICAL/Hayden-Proprietary-1.0.md",
         "COMMERCIAL_BASELINE.md"
-      ]
-    },
-    "owner-reserved": {
-      "license": "LicenseRef-Hayden-All-Rights-Reserved",
-      "terms": "RIGHTS-RESERVED.md",
-      "files": [
-        "CHANGELOG.md",
-        "LICENSE.md",
-        "README.md",
-        "RIGHTS-RESERVED.md",
-        "dist/profiles/relational-systems.profile.json",
-        "docs/license-requirements.md",
-        "docs/licensing.md",
-        "docs/prose-control.md",
-        "docs/register-specification.md",
-        "docs/relational-transitions-verification.md",
-        "docs/relational-transitions.md",
-        "docs/requirements.md",
-        "license-scope.json",
-        "profiles/relational-systems.profile.json",
-        "schemas/license-scope.schema.json",
-        "scripts/check.mjs",
-        "test/fixtures/license-scope.v2.json",
-        "test/prose-control.test.mjs",
-        "test/relational-transitions.test.mjs"
-      ],
-      "registerFiles": [
-        "dist/profiles/relational-systems.profile.json",
-        "docs/prose-control.md",
-        "docs/register-specification.md",
-        "docs/relational-transitions-verification.md",
-        "docs/relational-transitions.md",
-        "profiles/relational-systems.profile.json",
-        "test/prose-control.test.mjs",
-        "test/relational-transitions.test.mjs"
       ]
     }
   }

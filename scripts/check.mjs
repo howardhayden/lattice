@@ -75,11 +75,11 @@ if (packagePayload.private !== true) {
 }
 
 const scopeManifest = JSON.parse(await readFile(join(root, "license-scope.json"), "utf8"));
-const expectedScopes = ["register-exclusive", "engine-proprietary", "license-administrative"];
+const expectedScopes = ["register-exclusive", "engine-proprietary", "license-administrative", "owner-reserved"];
 if (Object.keys(scopeManifest.scopes).sort().join("|") !== expectedScopes.sort().join("|")) {
   throw new Error("License scope manifest is not closed");
 }
-if (scopeManifest.version !== "2.0.0") {
+if (scopeManifest.version !== "2.1.0") {
   throw new Error("License scope manifest must use the commercial-baseline schema version");
 }
 const proprietaryScope = scopeManifest.scopes["engine-proprietary"];
@@ -105,6 +105,20 @@ for (const historicalTerms of [
   if (proprietaryScope.files.includes(historicalTerms)) {
     throw new Error(`Historical terms must not be the current engine license: ${historicalTerms}`);
   }
+}
+
+const reserved = scopeManifest.scopes["owner-reserved"];
+if (reserved.license !== "LicenseRef-Hayden-All-Rights-Reserved" || reserved.terms !== "RIGHTS-RESERVED.md") {
+  throw new Error("Reserved revisions must offer no new contractual grant");
+}
+if (!Array.isArray(reserved.registerFiles) || new Set(reserved.registerFiles).size !== reserved.registerFiles.length
+  || reserved.registerFiles.some((path) => !reserved.files.includes(path))) {
+  throw new Error("Reserved register subset must be unique and contained in its controlling scope");
+}
+const reservedTerms = await readFile(join(root, reserved.terms), "utf8");
+for (const phrase of ["No new contractual permission is granted", "Applicable law", "applicable platform rights",
+  "Third-party materials retain their own terms", "does not revoke those permissions"]) {
+  if (!reservedTerms.includes(phrase)) throw new Error(`Reservation boundary missing: ${phrase}`);
 }
 
 const classified = new Map();
@@ -145,7 +159,7 @@ for (const relativePath of classified.keys()) {
   }
 }
 
-const exclusive = new Set(scopeManifest.scopes["register-exclusive"].files);
+const exclusive = new Set([...scopeManifest.scopes["register-exclusive"].files, ...reserved.registerFiles]);
 for (const requiredExclusivePath of [
   "profiles/relational-systems.profile.json",
   "dist/profiles/relational-systems.profile.json",
@@ -153,8 +167,12 @@ for (const requiredExclusivePath of [
   "test/adversarial.test.mjs"
 ]) {
   if (!exclusive.has(requiredExclusivePath)) {
-    throw new Error(`Register Material escaped exclusive scope: ${requiredExclusivePath}`);
+    throw new Error(`Register Material escaped protected scope: ${requiredExclusivePath}`);
   }
+}
+
+if (classified.get("profiles/relational-systems.profile.json") !== classified.get("dist/profiles/relational-systems.profile.json")) {
+  throw new Error("Source and compiled register classification differs");
 }
 
 const sourceProfile = await readFile(join(root, "profiles/relational-systems.profile.json"), "utf8");
@@ -164,6 +182,9 @@ if (sourceProfile !== builtProfile) {
 }
 
 const licenseNotice = await readFile(join(root, "LICENSE.md"), "utf8");
+if (!licenseNotice.includes("owner-reserved") || !licenseNotice.includes("offers no new contractual permission")) {
+  throw new Error("Current notice omits prospective no-grant precedence");
+}
 const proprietaryTerms = await readFile(join(root, "LICENSES/Hayden-Proprietary-1.1.md"), "utf8");
 const historicalProprietaryTerms = await readFile(join(root, "LICENSES/HISTORICAL/Hayden-Proprietary-1.0.md"), "utf8");
 const registerTerms = await readFile(join(root, "REGISTER-LICENSE.md"), "utf8");

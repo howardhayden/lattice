@@ -6,6 +6,13 @@ Policy revision: 2026-09-23, effective prospectively with the introducing commit
 or distribution. Lattice is proprietary, source-available, not open source.
 The engine and the exclusive register remain separate scopes.
 
+Prospective 2026-10-07 successor: changed/new Owner-original paths classified
+as `owner-reserved` are controlled by [RIGHTS-RESERVED.md](RIGHTS-RESERVED.md),
+which offers no new contractual permission. Its `registerFiles` subset remains
+separately protected Register Material. This exact-path reservation controls
+those revisions before the unchanged-path scopes below; it does not revoke
+valid earlier-copy rights or alter law, platform rights, or third-party terms.
+
 ## 1. Engine Materials
 
 Files classified as `engine-proprietary` in `license-scope.json` are governed
@@ -47,9 +54,9 @@ visibility change does not extinguish rights in copies to which they attached.
 
 Separately signed Owner agreements control their express scope. The exact path
 classification in `license-scope.json` then distinguishes the register, engine,
-and administrative scopes. The Exclusive Register License prevails for its
-protected register material and compiled copies; the engine terms do not grant
-register rights. GitHub's applicable platform viewing and forking permissions
+and administrative scopes. Owner-reserved classification controls the listed revised paths and register
+subset; the Exclusive Register License controls unchanged paths classified
+under it. The engine terms do not grant register rights. GitHub's applicable platform viewing and forking permissions
 are not restricted by this notice.
 
 ## 5. No implied license or automatic price
