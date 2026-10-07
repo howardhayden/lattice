@@ -5,8 +5,8 @@ This register is normative for packaging and distribution. It supplements the pr
 | ID | Requirement | Verification |
 | --- | --- | --- |
 | LRE-LIC-001 | Every shipped file MUST be assigned to exactly one controlling license scope. | Compare the release inventory with `license-scope.json`; reject omissions and duplicates. |
-| LRE-LIC-002 | Current Engine Materials MUST use the Hayden Howard Proprietary Product and Source License 1.1. | Inspect package metadata, scope manifest, and bundled current terms. |
-| LRE-LIC-003 | Register Materials MUST retain the Lattice Exclusive Register License and MUST NOT inherit permission from the engine scope. | Verify `register-exclusive` precedence in `LICENSE.md` and the scope manifest. |
+| LRE-LIC-002 | Unchanged Engine Materials retain the Hayden Howard Proprietary Product and Source License 1.1; materially changed/new Owner-original paths MUST be owner-reserved unless separately approved. | Inspect package metadata, scope manifest, and bundled current terms. |
+| LRE-LIC-003 | Unchanged Register Materials retain the Lattice Exclusive Register License; changed/new reserved Register Materials MUST be identified in `owner-reserved.registerFiles` and MUST NOT inherit permission from engine terms. | Verify exact exclusive/reserved classification and reserved-path precedence in `LICENSE.md` and the scope manifest. |
 | LRE-LIC-004 | Third parties MUST receive no general functional-use grant for Register Materials. | Inspect the Exclusive Register License and proposed-use matrix. |
 | LRE-LIC-005 | Register restrictions MUST cover software execution and manual application. | Test the terms against automated and human-authored use cases. |
 | LRE-LIC-006 | Register restrictions MUST cover extraction, paraphrase, translation, subsets, recombination, and covered derivatives. | Review representative evasion cases against Sections 2 and 6. |
@@ -18,20 +18,28 @@ This register is normative for packaging and distribution. It supplements the pr
 | LRE-LIC-012 | A separate executable or engine-only offering MUST require express Owner authorization and MUST NOT be described as an automatic source-reuse license. | Review release inventory, entitlement terms, and public descriptions. |
 | LRE-LIC-013 | The licenses MUST preserve fair use and other non-waivable statutory rights. | Inspect statutory-rights provisions. |
 | LRE-LIC-014 | The licenses MUST NOT falsely claim control over uncopyrightable ideas, facts, methods, or independently created material. | Inspect material definitions and guidance. |
-| LRE-LIC-015 | Compiled or mechanically transformed Register Materials MUST remain within the exclusive scope. | Compare source and distribution manifests. |
+| LRE-LIC-015 | Compiled or mechanically transformed Register Materials MUST preserve their source scope, including reserved classification where applicable. | Compare source and distribution manifests. |
 | LRE-LIC-016 | Publication, visibility, attribution, contribution, payment, or technical access MUST NOT be described as implied implementation-reuse permission. | Documentation and terms review. |
 | LRE-LIC-017 | Outside contributions MUST NOT enter a release without documented ownership and licensing provenance. | Contribution-evidence gate. |
 | LRE-LIC-018 | Any additional Owner-controlled permission MUST require a separate writing signed by the Owner and identify its material and scope. | Inspect terms and exception records. |
 | LRE-LIC-019 | Permissions validly attached to earlier distributed copies and third-party terms MUST remain governed by their own terms, without being presented as revoked, as new default grants, or as automatically applicable to a different copy or later distribution. | Inspect `COMMERCIAL_BASELINE.md`, retained terms, changelog, and current guidance. |
 | LRE-LIC-020 | The commercial baseline MUST identify parent `029ca14570b3ebe5703f504ab4b4baed90883f84`, first source-available code commit `7d1d980fa92cf0591dacac06f98391b23e93e9f4`, and the absence of an OSI-approved product-code predecessor. | Baseline marker assertion. |
 
+## Prospective no-grant addition — 2026-10-07
+
+| ID | Requirement | Verification |
+| --- | --- | --- |
+| LRE-LIC-021 | Materially changed/new Owner-original paths MUST offer no new contractual permission without separate explicit scope-specific approval. | Confirm owner-reserved inventory and no-grant notice; reject inherited classification of a changed path. |
+| LRE-LIC-022 | The reserved Register Material subset MUST be contained in the reserved inventory and preserve source/compiled classification parity. | Reject missing, foreign, or differently classified register paths. |
+| LRE-LIC-023 | Current and historical full license texts MUST remain exact; prospective reservation MUST preserve law, platform, third-party, and valid earlier-copy rights. | Exact term hashes, historical-manifest evidence, and reservation review. |
+
 ## Release evidence
 
 A licensing-complete release requires:
 
-1. a closed, duplicate-free scope manifest using `engine-proprietary`, `register-exclusive`, and `license-administrative`;
+1. a closed, duplicate-free scope manifest using `engine-proprietary`, `register-exclusive`, `license-administrative`, and `owner-reserved`, with an explicit reserved Register Material subset;
 2. all listed files present in the release, including the current proprietary terms, retained historical PolyForm text, and `COMMERCIAL_BASELINE.md`;
-3. exact source and compiled profile copies classified as exclusive;
+3. exact source and compiled profile copies sharing the same protected register classification;
 4. package metadata pointing to the controlling split-scope notice and retaining the registry-publication block;
 5. an exact prospective baseline record that preserves earlier grants without presenting them as current defaults;
 6. public-language scans rejecting open-source, general noncommercial-reuse, and automatic engine-only-release claims except explicit historical explanation or negation;

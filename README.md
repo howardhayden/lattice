@@ -2,7 +2,7 @@
 
 Lattice is a local-first, deterministic TypeScript engine for producing and validating context-sensitive copy from typed meaning contracts. It separates **what a text must mean** from **how that meaning may be expressed**, then records how each output was derived.
 
-This owner package is **proprietary source-available software, not open source**. Current Engine Materials are governed by the Hayden Howard Proprietary Product and Source License 1.1: source inspection and authorized Official Product use do not supply general implementation-reuse rights. Permissions validly attached to earlier distributed copies remain governed by their own terms and do not automatically attach to later copies or snapshots; this policy does not decide their application to a different copy or later distribution. The bundled register remains separately reserved for Hayden Howard’s exclusive functional use; third parties receive its existing limited inspection permission but no right to execute, apply, adapt, redistribute, train on, or commercialize it. See [Licensing](#licensing).
+This owner package is **proprietary source-available software, not open source**. Unchanged Engine Materials classified as `engine-proprietary` are governed by the Hayden Howard Proprietary Product and Source License 1.1: source inspection and authorized Official Product use do not supply general implementation-reuse rights. Permissions validly attached to earlier distributed copies remain governed by their own terms and do not automatically attach to later copies or snapshots; this policy does not decide their application to a different copy or later distribution. The bundled register remains separately reserved. Changed and new Owner-original paths in `owner-reserved` offer no new contractual permission; unchanged paths retain their exact existing classification. See [Licensing](#licensing).
 
 Lattice is not an arbitrary prose-rewriting system. It does not infer an authoritative semantic contract from unstructured text, call a language model, or treat stylistic resemblance as proof that meaning survived. Strong guarantees apply only when a caller supplies structured semantic atoms, explicit context, compiled register rules, and traceable candidate realizations.
 
@@ -163,7 +163,9 @@ The bundled profile favors:
 
 The profile suppresses figurative, implicit, or ornamental behavior when operative, safety-critical, or accessibility-equivalent copy requires direct language.
 
-The exact register, its compiled copies, register-specific fixtures, and register specification are governed by the Exclusive Register License rather than the engine license. See the [restricted register specification](docs/register-specification.md) for its integration boundary.
+Profile `v1.2.0` adds seven genre-neutral [relational-transition controls](docs/relational-transitions.md) to the unchanged inherited 87 rules. They track evidence, belief, permission, dependencies, recurrence, reception, and resolution using advisory manual review. Applicable unassessed findings remain unknown; no automatic semantic judgment or new request field is added.
+
+Register Materials retain separate protection under their exact manifest scope. Changed source and compiled profiles are owner-reserved; unchanged register paths retain their existing Exclusive Register License classification. See the [restricted register specification](docs/register-specification.md) for the integration boundary.
 
 ## Licensing
 
@@ -171,13 +173,14 @@ The controlling scope is file-specific:
 
 | Material | Terms | Third-party permission |
 | --- | --- | --- |
-| Engine Materials | Hayden Howard Proprietary Product and Source License 1.1 | Inspection within the terms; Official Product use only within an actual offering or entitlement; no general implementation reuse. |
-| Relational Systems Register | Lattice Exclusive Register License 1.0 | Evaluation inspection only; no functional use. |
-| Licensing and historical records | `LICENSE.md` and source-specific terms | Retention and copying as necessary to preserve, communicate, or comply with terms; retained PolyForm text is not a new default engine grant. |
+| Changed/new Owner-original paths | [Prospective reservation](RIGHTS-RESERVED.md) | No new contractual grant; law, platform, third-party, and valid earlier-copy rights remain unaffected. |
+| Unchanged `engine-proprietary` paths | Hayden Howard Proprietary Product and Source License 1.1 | Inspection within the terms; Official Product use only within an actual offering or entitlement; no general implementation reuse. |
+| Unchanged `register-exclusive` paths | Lattice Exclusive Register License 1.0 | Evaluation inspection only; no functional use. |
+| Unchanged `license-administrative` paths | `LICENSE.md` and source-specific terms | Retention and copying as necessary to preserve, communicate, or comply with terms; retained PolyForm text is not a new default engine grant. |
 
 The complete package remains marked `private` and must not be published to a public package registry without separate express authorization. A separately authorized executable offering follows its actual entitlement terms and does not grant source reuse. Removing the register or extracting the engine does not automatically create a public or permissive release.
 
-Read the controlling [license notice](LICENSE.md), [proprietary engine terms](LICENSES/Hayden-Proprietary-1.1.md), [exclusive register terms](REGISTER-LICENSE.md), [commercial baseline](COMMERCIAL_BASELINE.md), [scope manifest](license-scope.json), [licensing guide](docs/licensing.md), and [adversarial licensing review](docs/license-red-team.md) before distributing or using any part of the package.
+Read the controlling [license notice](LICENSE.md), [prospective reservation](RIGHTS-RESERVED.md), [proprietary engine terms](LICENSES/Hayden-Proprietary-1.1.md), [exclusive register terms](REGISTER-LICENSE.md), [commercial baseline](COMMERCIAL_BASELINE.md), [scope manifest](license-scope.json), [licensing guide](docs/licensing.md), and [dated prior-policy review](docs/license-red-team.md), and [current reservation verification](docs/relational-transitions-verification.md) before distributing or using any part of the package.
 
 ## Owner-only local development
 

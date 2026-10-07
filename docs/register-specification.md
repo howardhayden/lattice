@@ -2,9 +2,9 @@
 
 Required Notice: Copyright 2026 Hayden Howard. All rights reserved.
 
-This document is a Register Material governed by the [Lattice Exclusive Register License 1.0](../REGISTER-LICENSE.md). Visual inspection for evaluation does not authorize functional use.
+This revision is a reserved Register Material under [RIGHTS-RESERVED.md](../RIGHTS-RESERVED.md). Exact path classification controls this copy; valid earlier-copy permissions remain unaffected. No new third-party grant is offered.
 
-The machine-readable, atomized authority is [`profiles/relational-systems.profile.json`](../profiles/relational-systems.profile.json). The requirements below define its integration contract but do not replace its 87 atomic rules.
+The machine-readable, atomized authority is [`profiles/relational-systems.profile.json`](../profiles/relational-systems.profile.json). The requirements below define its integration contract but do not replace its 94 atomic rules.
 
 | ID | Requirement | Verification |
 | --- | --- | --- |
@@ -27,9 +27,15 @@ Profile `v1.1.0` adds `RSR-CTL-001` through `RSR-CTL-018` without modifying or s
 
 The controls use the existing `manual-review` validator with advisory enforcement. Registration is not automated literary understanding: applicable unassessed controls remain unknown. No new request fields, automatic quality score, or override of a hard gate is introduced.
 
+## Genre-neutral relational transitions
+
+Profile `v1.2.0` appends `RSR-DYN-001`–`RSR-DYN-007` while preserving all 87 inherited rules exactly. The [transition register](relational-transitions.md) tracks evidence access, belief validity and uptake, scoped reliability and authorization, material dependencies, recurrence history, communicative reception, and resolution by participant and dimension. Its applicability follows semantic opportunities across contexts, with no genre labels or required emotional outcomes. [Current verification](relational-transitions-verification.md) records structural/runtime evidence and its limits.
+
+These advisory manual-review atoms apply only in experiential and interpretive layers. Unassessed applicable findings remain unknown. They add no engine validator, request field, automatic quality score, or authority to weaken protected meaning.
+
 ## Protected forms
 
-The exclusive scope includes the source profile, its compiled copies, these register-specific requirements, register-specific realization fixtures, and the adversarial test corpus identified by `license-scope.json`. Mechanical transformation does not change scope.
+Register protection covers the source profile, compiled copies, register-specific requirements, fixtures, and tests identified by `license-scope.json`. Changed reserved paths appear in `owner-reserved.registerFiles`; unchanged exclusive paths retain their existing scope. Mechanical transformation does not broaden permission.
 
 ## Engine relationship
 

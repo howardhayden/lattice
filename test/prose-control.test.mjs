@@ -1,5 +1,5 @@
 // Required Notice: Copyright 2026 Hayden Howard. All rights reserved.
-// Register Material under REGISTER-LICENSE.md.
+// Reserved Register Material under RIGHTS-RESERVED.md.
 // These tests cover atomization structure and reference arithmetic, not reader effects.
 import test from "node:test";
 import assert from "node:assert/strict";
@@ -24,7 +24,7 @@ function restoredBaseline(text) {
   const boundary = text.indexOf(',\n    {\n      "id": "RSR-CTL-001"');
   assert.ok(boundary > 0, "missing additive control block boundary");
   return `${text.slice(0, boundary)}\n  ]\n}\n`
-    .replace('"version": "v1.1.0"', '"version": "v1.0.0"');
+    .replace('"version": "v1.2.0"', '"version": "v1.0.0"');
 }
 
 function assertDependencyGraph(rules) {
@@ -46,9 +46,9 @@ function assertDependencyGraph(rules) {
 
 test("control atoms are additive to the exact byte-verified baseline", () => {
   assert.equal(gitBlob(restoredBaseline(source)), originalProfileSha);
-  assert.equal(profile.rules.length, 87);
+  assert.equal(profile.rules.length, 94);
   assert.equal(controls.length, 18);
-  assert.equal(profile.version, "v1.1.0");
+  assert.equal(profile.version, "v1.2.0");
 });
 
 test("source and distributed profile bytes agree", () => {
@@ -118,7 +118,7 @@ test("specification states manual-review and mathematical authority limits", () 
     assert.ok(doc.includes(`CTL-C-${String(index).padStart(3, "0")}`));
   }
   const register = read("docs/register-specification.md");
-  assert.ok(register.includes("87 atomic rules"));
+  assert.ok(register.includes("94 atomic rules"));
   assert.ok(register.includes("(prose-control.md)"));
   assert.ok(register.includes("(prose-control-verification.md)"));
 });
@@ -128,14 +128,16 @@ test("current proprietary scope preserves exact pre-baseline manifest evidence",
   const added = ["docs/prose-control.md", "docs/prose-control-verification.md", "test/prose-control.test.mjs"];
   const all = Object.values(manifest.scopes).flatMap((scope) => scope.files);
   assert.equal(all.length, new Set(all).size);
-  for (const path of added) assert.ok(manifest.scopes["register-exclusive"].files.includes(path));
+  for (const path of added) assert.ok([...manifest.scopes["register-exclusive"].files, ...manifest.scopes["owner-reserved"].registerFiles].includes(path));
   assert.equal(manifest.scopes["engine-proprietary"].license, "LicenseRef-Hayden-Proprietary-1.1");
   assert.ok(manifest.scopes["license-administrative"].files.includes("COMMERCIAL_BASELINE.md"));
   assert.ok(manifest.scopes["license-administrative"].files.includes("LICENSES/Hayden-Proprietary-1.1.md"));
   assert.ok(manifest.scopes["license-administrative"].files.includes("LICENSES/HISTORICAL/Hayden-Proprietary-1.0.md"));
   assert.ok(manifest.scopes["license-administrative"].files.includes("LICENSES/PolyForm-Noncommercial-1.0.0.md"));
 
-  const historical = structuredClone(manifest);
+  const baselineManifest = JSON.parse(read("test/fixtures/license-scope.v2.json"));
+  assert.equal(gitBlob(read("test/fixtures/license-scope.v2.json")), "12f6c1e746036e0fe6a5c53b13cebc69fd27ba2d");
+  const historical = structuredClone(baselineManifest);
   historical.version = "1.0.0";
   historical.scopes = {
     "register-exclusive": {
