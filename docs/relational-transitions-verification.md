@@ -77,8 +77,9 @@ not self-embedded here. No package release or deployment is claimed.
 
 ## Evidence input bindings
 
-SHA-256 bindings identify reviewed input bytes, not semantic truth or external
-authenticity. This record does not hash itself.
+SHA-256 bindings below identify the original integration and packaging inputs,
+not subsequent revisions, semantic truth, or external authenticity. This record
+does not hash itself. Later corrections bind their changed inputs separately.
 
 | Input | SHA-256 |
 | --- | --- |
@@ -90,3 +91,17 @@ authenticity. This record does not hash itself.
 | `scripts/check.mjs` | `ac0d8f8fc5aa95007b30bdf0adbc2cf2323147b68a2d9240aabc90af8baf26c9` |
 | `schemas/license-scope.schema.json` | `c49201bf821ba0919ec607abac62fad2799195e287e2d959cc816810f26ac756` |
 | `package.json` | `b43762a9239e9ff2e99ddba211c525dc729d4ab867085f24f9cb01650bc3e836` |
+
+## Corrective review: inference and expressive intervals
+
+Date: 2026-10-07. Follow-up baseline: `754caa984851943cb837f9d1d4260c6b8d4a7fca`. An owner correction identified an example that made its outcome distinctions into closing explanations, conflicting with the intended opportunity for intuitive recognition and interpretive space. The example's preceding context was unavailable; redundancy within that unseen scene remains conditional. No example text is reproduced here.
+
+Existing subtext, cadence, repetition, and ending controls already cover this failure. The narrow clarification separates distinctions tracked in review from conclusions explicitly narrated in a realization. It adds three original positive, negative, and boundary editorial probes (`DYN-R-001-P`/`N`/`B`) under those existing controls, with no new atom or runtime claim. Applicability remains genre-neutral and target-relative; necessary explanation, warranted focal contribution, operative clarity, and accessibility-equivalent meaning are preserved.
+
+Write boundary: this record and `docs/relational-transitions.md`, both already owner-reserved. All profile, engine, API, schema, validator, package, rights-scope, and historical-license bytes are preserved. The original integration evidence and its input bindings remain historical evidence.
+
+Focused executed check: `node --test test/relational-transitions.test.mjs`, 18 tests passed, 0 failed, using the unchanged built runtime. Diff whitespace checks passed. The checks verify inherited-profile preservation, advisory applicability, unknown findings, and rights/packaging boundaries; they do not execute the new editorial probes or establish reader effects. No new automated test is claimed for the contextual judgment.
+
+Independent agent review examined the actual clarification and found it aligned with the correction and genre-neutral applicability. A probe was refined to preserve all independent contributions under the declared target, including affective, rhythmic, orienting, and deferred contributions rather than propositional novelty alone. This was agent review, not human or audience review.
+
+Changed guidance input SHA-256: `3b35c525069070448279755b2e96c44ef24f3d114d516352c13337545c07feb7` (`docs/relational-transitions.md`).

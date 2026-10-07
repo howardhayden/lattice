@@ -61,6 +61,24 @@ These descriptive mechanisms refine the review questions; they are not 26 additi
 | `RT-M25` Transferred burden | Account for relevant capacity and cost redistribution after intervention. | DYN-004/007 |
 | `RT-M26` Earned exit | End after a sufficient meaningful change while retaining supported unresolved dependencies. | DYN-007; CTL-012/018 |
 
+## Reader inference and expressive intervals
+
+Distinguishing semantic states during review does not require naming each distinction in the realized text. In particular, `RSR-DYN-007` asks the reviewer to distinguish outcomes; it does not prescribe a narrated inventory of what improved and what remains unresolved. Review records can state relations that the passage leaves inferable through established action, detail, sequence, timing, or consequential absence.
+
+When intuitive recognition or interpretive space is a declared target under `RSR-CTL-002`, preserve the reader's opportunity to perceive and connect those relations. An interval can contribute attention, anticipation, felt distance, or coexistence of supported meanings. Its contribution must be assessed in context under `RSR-CTL-007`/`018`; fewer words, shorter sentences, and blank lines do not establish that contribution. A short, balanced verdict can close interpretation as thoroughly as a long explanation.
+
+Under `RSR-SUB-001`/`004`, `RSR-CTL-009`/`012`, and `RSR-SCN-003`, compare the passage with and without an appended interpretation. If the established evidence still supports the intended relation, identify what the addition independently supplies and what opportunity for recognition, pacing, or openness it removes. Stop at the earned action or interval when the added verdict merely decodes it or imposes an unwarranted conclusion. Preserve necessary orientation, newly accessible information, warranted focal thought, and contributions that emerge across the larger unit.
+
+This review remains genre-neutral and target-relative. Direct explanation, explicit contrast, aphorism, and fully resolved endings remain available when they do warranted work. No sentence pattern is forbidden, no obligatory silence or obscurity is introduced, and required operative and accessibility-equivalent meaning stays explicit.
+
+Corrective editorial probes; these are original scenario descriptions, not executed semantic tests:
+
+| Probe | Acceptance question |
+| --- | --- |
+| `DYN-R-001-P` | A participant returns to an established task after a consequential interruption. The passage ends on that action; earlier evidence keeps another obligation inferable without a closing explanation. Does the omission preserve both the supported relation and the declared space for recognition? |
+| `DYN-R-001-N` | The same passage appends a balanced verdict classifying the improvement and its limits, adding no independent contribution under the declared target. Does review identify how the addition decodes the action and closes the intended interpretive interval? |
+| `DYN-R-001-B` | A later explanation supplies previously inaccessible information or a required next step. Does review retain that contribution rather than deleting it to manufacture silence? |
+
 ## Atomic acceptance register
 
 Review owner: an identified editor or analyst for each actual assessment. Status: **atomized; advisory/manual review; semantic and audience success unassessed**. The following synthetic positive, negative, and boundary probes define acceptance questions; they are not executed reader-effect tests.
